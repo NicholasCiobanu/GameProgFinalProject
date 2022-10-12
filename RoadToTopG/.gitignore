@@ -1,3 +1,5 @@
+s .gitignore file should be placed at the root of your Unity project directory
+
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
