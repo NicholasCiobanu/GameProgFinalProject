@@ -7,7 +7,10 @@ public class TriggerDoorOpen : MonoBehaviour
     [SerializeField] private Animator myDoor = null;
     [SerializeField] private Animator secondDoor = null;
     [SerializeField] private bool openTrigger = false;
-    public GameObject uiObject;
+
+ [SerializeField] private string firstDoorOpen = "";
+ [SerializeField] private string secondDoorOpen = "";
+ public GameObject uiObject;
 
     void Start() {
         uiObject.SetActive(false);
@@ -20,8 +23,8 @@ public class TriggerDoorOpen : MonoBehaviour
             if(Input.GetKey("f")) {
                 Destroy(uiObject);
                 if (openTrigger) {
-                        myDoor.Play("DoorOpen", 0, 0.0f);
-                        secondDoor.Play("SecondDoor", 0, 0.0f);
+                        myDoor.Play(firstDoorOpen, 0, 0.0f);
+                        secondDoor.Play(secondDoorOpen, 0, 0.0f);
                         gameObject.SetActive(false);
                 }
             }
