@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 7efef9342dc0a1a4187e1a126eb9c0e9
+<<<<<<<< HEAD:RoadToTopG/Assets/DoorLogics.meta
+guid: d2520da19fb9776448d2a34270d3839a
+========
+guid: 888d768cbb337044fa560e96fa271a87
+>>>>>>>> main:RoadToTopG/Assets/StarterAssets.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

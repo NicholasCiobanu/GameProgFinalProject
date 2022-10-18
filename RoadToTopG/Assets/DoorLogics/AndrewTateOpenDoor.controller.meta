@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:RoadToTopG/Assets/DoorLogics/AndrewTateOpenDoor.controller.meta
 guid: bd03d64a0993cc049809c13aa250e5bd
 NativeFormatImporter:
+========
+guid: b846ecad8a98bd34dba8a5daf996d86e
+TextScriptImporter:
+>>>>>>>> main:RoadToTopG/Assets/StarterAssets/license.txt.meta
   externalObjects: {}
   mainObjectFileID: 9100000
   userData: 
