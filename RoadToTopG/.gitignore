@@ -9,7 +9,6 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
-# /[Aa]ssets/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -73,3 +72,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 /[Aa]ssets/[Tt]irgamesAssets/aa.meta
 /[Aa]ssets/[Tt]irgamesAssets/aa/*
+/[Aa]ssets/[Aa]nimations.meta
+/[Aa]ssets/[Aa]nimations/*
