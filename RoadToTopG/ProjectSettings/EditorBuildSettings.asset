@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/TirgamesAssets/SchoolScene/Scenes/MainMenu.unity
+    guid: f859b59fdb3f6844dbc45a414ccbd922
+  - enabled: 1
+    path: Assets/TirgamesAssets/SchoolScene/Scenes/SchoolSceneAbandoned.unity
+    guid: c2d5027cd762d4645afbf87129a59cf1
   m_configObjects: {}
