@@ -5,6 +5,9 @@ using System.Collections;
 public class Weapon : MonoBehaviour
 {
 
+    //audio files
+    public AudioSource audioSource;
+    public AudioClip shotSound;
     //shooting variables
     public float damage = 10f;
     public float range = 100f;
@@ -15,7 +18,7 @@ public class Weapon : MonoBehaviour
     public int maxAmmo = 10;
     private int currentAmmo;
     public float reloadTime = 1f;
-    private bool isReloading = false;
+    public bool isReloading = false;
     public Animator animator;
 
     //effects variables
@@ -31,8 +34,8 @@ public class Weapon : MonoBehaviour
 
     void OnEnable()
     {
-        isReloading = false;
         animator.SetBool("Reloading",false);
+        isReloading = false;
     }
 
     void Update()
@@ -57,7 +60,7 @@ public class Weapon : MonoBehaviour
         currentAmmo--;
         muzzleFlash.Play();
         RaycastHit hit;
-        
+        audioSource.PlayOneShot(shotSound);
         //if the raycast hits something
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range)){
             Debug.Log(hit.transform.name);

@@ -6,6 +6,10 @@ public class WeaponSwitching : MonoBehaviour
 {
     [SerializeField]
     int selectedWeapon = 0;
+    [SerializeField]
+    AudioClip equipWeapon;
+    [SerializeField]
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +52,14 @@ public class WeaponSwitching : MonoBehaviour
         foreach (Transform weapon in transform)
         {
             if (i == selectedWeapon)
+            {
+                if(!weapon.GetComponent<Weapon>().isReloading)
+                {
+                audioSource.clip = equipWeapon;
+                audioSource.Play();
+                }
                 weapon.gameObject.SetActive(true);
+            }
             else
                 weapon.gameObject.SetActive(false);
             i++;
