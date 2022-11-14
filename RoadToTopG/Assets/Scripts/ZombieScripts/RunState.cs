@@ -23,14 +23,15 @@ public class RunState : StateMachineBehaviour
     {
         distance = Vector3.Distance(player.transform.position, zombie.transform.position);
         
-        Debug.Log("Distance to player" + distance);
         if(distance < 1)
         {
             animator.SetBool("isInRange", true);
+            
         }
         
         
     }
+
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

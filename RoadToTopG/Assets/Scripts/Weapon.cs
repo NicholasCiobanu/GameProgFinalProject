@@ -20,12 +20,15 @@ public class Weapon : MonoBehaviour
     public float reloadTime = 1f;
     public bool isReloading = false;
     public Animator animator;
+    public Animator zombieAnimator;
 
     //effects variables
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
 
+
+   
 
     void Start () 
     {
@@ -65,16 +68,21 @@ public class Weapon : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range)){
             Debug.Log(hit.transform.name);
         
-        // Target target = hit.transform.GetComponent<Target>(); //code for damage receiving
-        // if(target != null){
-        //     target.TakeDamage(damage);
-        // }
+        GameObject target = hit.transform.gameObject; //code for damage receiving
+        if(target != null){
+            target.transform.GetComponent<NormalController>().health -= 10;
+
+            // target.transform.GetComponentTakeDamage(damage);
+        } 
+        
 
         //destroys impact particle system instantiated
         GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         Destroy(impactGO, 0.5f);
         }
     }
+
+    
 
     IEnumerator Reload()
     {

@@ -20,12 +20,10 @@ public class AttackState : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         distance = Vector3.Distance(player.transform.position, zombie.transform.position);
-
-        Debug.Log("Distance to player" + distance);
+        
         if (distance > 1)
         {
             animator.SetBool("isInRange", false);
-           
         }
         
     }
