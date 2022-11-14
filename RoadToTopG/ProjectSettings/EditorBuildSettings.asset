@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/TirgamesAssets/SchoolScene/Scenes/SchoolSceneAbandoned.unity
     guid: c2d5027cd762d4645afbf87129a59cf1
+  - enabled: 1
+    path: Assets/TirgamesAssets/SchoolScene/Scenes/AbuTateScene.unity
+    guid: 5237f7a83b88de647bb605e3e9114df9
   m_configObjects: {}
