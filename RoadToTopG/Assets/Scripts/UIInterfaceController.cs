@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class UIInterfaceController : MonoBehaviour
      public int playerHealth = 100;
      [SerializeField] private GameObject healthText;
      public Animator zombieAnimator;
+     float nextTimeToAttack = 0f;
     void Start()
     {
        
@@ -18,16 +20,17 @@ public class UIInterfaceController : MonoBehaviour
     void Update()
     {
 
-         if(zombieAnimator.GetBool("isInRange"))
-        {
-            StartCoroutine(Damage());
+         if(zombieAnimator.GetBool("isInRange") && Time.time >= nextTimeToAttack)
+        {   
+            nextTimeToAttack = Time.time + 1f;
+            playerHealth -= 10;
             healthText.GetComponent<Text>().text = "Health: " + playerHealth;
         }
     }
 
     public IEnumerator Damage() {
-        playerHealth -= 5;
-        yield return new WaitForSeconds(1000f);
+        yield return new WaitForSeconds(1f);
+        Debug.Log("Damage");
         playerHealth -= 5;
     }
 }
