@@ -13,18 +13,23 @@ public class TriggerDoorOpen : MonoBehaviour
 
     [SerializeField] private AudioSource doorOpenAudioSource = null;
 
+    [SerializeField] private int cost;
+    private MoneyManager mm;
+
  public GameObject uiObject;
 
     void Start() {
         uiObject.SetActive(false);
+        mm = FindObjectOfType<MoneyManager>();
     }
 
     private void OnTriggerStay(Collider player) {
         if(player.CompareTag("Player")) {
             uiObject.SetActive(true);
             StartCoroutine("WaitForSec");
-            if(Input.GetKey("f")) {
+            if(Input.GetKey("f") && mm.getMoney() >= cost) {
                 Destroy(uiObject);
+                mm.RemoveMoney(cost);
                 if (openTrigger) {
                         myDoor.Play(firstDoorOpen, 0, 0.0f);
                         secondDoor.Play(secondDoorOpen, 0, 0.0f);
