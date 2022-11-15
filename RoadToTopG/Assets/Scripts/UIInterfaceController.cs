@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UIInterfaceController : MonoBehaviour
 {
     // Start is called before the first frame update
-     public int playerHealth = 100;
+     private int playerHealth = 100;
      [SerializeField] private GameObject healthText;
      public Animator zombieAnimator;
      float nextTimeToAttack = 0f;
@@ -32,5 +32,16 @@ public class UIInterfaceController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Debug.Log("Damage");
         playerHealth -= 5;
+    }
+
+    public int getHealth()
+    {
+        return playerHealth;
+    }
+
+    public void setHealth(int health)
+    {
+        playerHealth = health;
+        healthText.GetComponent<Text>().text = "Health: " + playerHealth;
     }
 }
