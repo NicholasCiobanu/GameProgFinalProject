@@ -10,10 +10,14 @@ public class PowerUpShop : MonoBehaviour
     [SerializeField]
     private int cost;
     private MoneyManager mm;
+
+    private UIInterfaceController ic;
     // Start is called before the first frame update
     void Start()
     {
         mm = FindObjectOfType<MoneyManager>();
+        ic = FindObjectOfType<UIInterfaceController>();
+
         uiObject.SetActive(false);
 
     }
@@ -38,6 +42,7 @@ public class PowerUpShop : MonoBehaviour
             {
                 mm.RemoveMoney(cost);
                 uiObject.SetActive(false);
+                MoreHealthPower();
                 Debug.Log("Purchased");
             }
         }
@@ -47,5 +52,25 @@ public class PowerUpShop : MonoBehaviour
     {
         uiObject.SetActive(false);
         flag = false;
+    }
+
+    private void MoreHealthPower()
+    {
+        ic.setMaxHealth(ic.getMaxHealth() + 50);
+    }
+
+    private void NoReloadPower()
+    {
+
+    }
+
+    private void DamageUpPower()
+    {
+
+    }
+
+    private void ExplosiveShotPower()
+    {
+
     }
 }

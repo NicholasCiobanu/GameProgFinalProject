@@ -4,7 +4,8 @@ using System.Collections;
 
 public class Weapon : MonoBehaviour
 {
-
+    //money controller
+    private MoneyManager mm;
     //audio files
     public AudioSource audioSource;
     public AudioClip shotSound;
@@ -33,6 +34,7 @@ public class Weapon : MonoBehaviour
     void Start () 
     {
         currentAmmo = maxAmmo;
+        mm = FindObjectOfType<MoneyManager>();
     }
 
     void OnEnable()
@@ -71,6 +73,7 @@ public class Weapon : MonoBehaviour
         GameObject target = hit.transform.gameObject; //code for damage receiving
         if(target != null){
             target.transform.GetComponent<NormalController>().health -= 10;
+                mm.AddMoney(15);
 
             // target.transform.GetComponentTakeDamage(damage);
         } 
