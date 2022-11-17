@@ -49,7 +49,6 @@ public class WeaponSwitching : MonoBehaviour
 
     void SelectWeapon() {
         int i = 0;
-        audioSource.Stop();
         foreach (Transform weapon in transform)
         {
             if (i == selectedWeapon)
