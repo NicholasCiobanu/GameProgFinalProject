@@ -4,7 +4,8 @@ using System.Collections;
 
 public class Weapon : MonoBehaviour
 {
-
+    //money controller
+    private MoneyManager mm;
     //audio files
     public AudioSource audioSource;
     public AudioClip shotSound;
@@ -27,12 +28,16 @@ public class Weapon : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
 
+    [SerializeField]
+    private TrailRenderer bulletTrail;
+
 
    
 
     void Start () 
     {
         currentAmmo = maxAmmo;
+        mm = FindObjectOfType<MoneyManager>();
     }
 
     void OnEnable()
@@ -71,16 +76,21 @@ public class Weapon : MonoBehaviour
         GameObject target = hit.transform.gameObject; //code for damage receiving
         if(target != null){
             if (target.name.Equals("AbuTate"))
+            {
                 target.transform.GetComponent<TateAudioController>().health -= 10;
-            else
+                mm.AddMoney(15);
+            }
+            else if (target.name.Equals("Normal"))
+            {
                 target.transform.GetComponent<NormalController>().health -= 10;
+                mm.AddMoney(15);
+            }
+            
             // target.transform.GetComponentTakeDamage(damage);
         } 
         
 
-        //destroys impact particle system instantiated
-        GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-        Destroy(impactGO, 0.5f);
+            
         }
     }
 
@@ -95,5 +105,21 @@ public class Weapon : MonoBehaviour
         yield return new WaitForSeconds(.25f);
         currentAmmo = maxAmmo;
         isReloading = false;
+    }
+
+    IEnumerator SpawnTrail(TrailRenderer trail, RaycastHit hit){
+        float time = 0;
+        Vector3 startPosition = trail.transform.position;
+
+        while (time < 1) {
+            trail.transform.position = Vector3.Lerp(startPosition, hit.point, time);
+            time += Time.deltaTime / trail.time;
+            yield return null;
+        }
+        trail.transform.position = hit.point;
+        //destroys impact particle system instantiated
+        GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        Destroy(impactGO, 0.5f);
+        Destroy(trail.gameObject, trail.time);
     }
 }

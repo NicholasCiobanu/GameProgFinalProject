@@ -40,7 +40,7 @@ public class OpenShop : MonoBehaviour
                 flag = true; 
             }
             
-            if (Input.GetKeyDown(KeyCode.B) && mm.getMoney() >= cost && ic.getHealth() < 100)
+            if (Input.GetKeyDown(KeyCode.B) && mm.getMoney() >= cost && ic.getHealth() < ic.getMaxHealth())
             {
                 mm.RemoveMoney(cost);
                 uiObject.SetActive(false);
@@ -61,16 +61,16 @@ public class OpenShop : MonoBehaviour
     private IEnumerator AddHealth(float time)
     {
         int x;
-        if (100 - ic.getHealth() < 20)
+        if (ic.getMaxHealth() - ic.getHealth() < 20)
         {
-             x = 100 - ic.getHealth();
+             x = ic.getMaxHealth() - ic.getHealth();
         } else
         {
              x = 20;
         }
         for (int i = 0; i < x; i++)
         {
-            if (ic.getHealth() == 100)
+            if (ic.getHealth() == ic.getMaxHealth())
             {
                 break;
             }
