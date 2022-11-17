@@ -71,17 +71,23 @@ public class Weapon : MonoBehaviour
         audioSource.PlayOneShot(shotSound);
         //if the raycast hits something
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range)){
-            GameObject target = hit.transform.gameObject;
-            TrailRenderer trail = Instantiate(bulletTrail,new Vector3(transform.position.x,transform.position.y + 0.15f,transform.position.z), Quaternion.identity);
-            StartCoroutine(SpawnTrail(trail,hit));
-            //code for damage receiving and adding money
-            if(target != null && target.name == "Normal"){
-
-                target.transform.GetComponent<NormalController>().health -= 10;
-
+            Debug.Log(hit.transform.name);
+        
+        GameObject target = hit.transform.gameObject; //code for damage receiving
+        if(target != null){
+            if (target.name.Equals("AbuTate"))
+            {
+                target.transform.GetComponent<TateAudioController>().health -= 10;
                 mm.AddMoney(15);
-
-            } 
+            }
+            else if (target.name.Equals("Normal"))
+            {
+                target.transform.GetComponent<NormalController>().health -= 10;
+                mm.AddMoney(15);
+            }
+            
+            // target.transform.GetComponentTakeDamage(damage);
+        } 
         
 
             
