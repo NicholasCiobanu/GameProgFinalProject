@@ -14670,8 +14670,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8deefa483abd7e44bacea79a2b587414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  shotSound: {fileID: 0}
+  audioSource: {fileID: 1540164234}
+  shotSound: {fileID: 8300000, guid: 9514e7c1361cffc4197404782e9fb8de, type: 3}
+  reloadSound: {fileID: 8300000, guid: 70336c487d0bfa043a9d25d54cdccd18, type: 3}
   damage: 10
   range: 100
   fireRate: 3
@@ -14683,6 +14684,7 @@ MonoBehaviour:
   fpsCam: {fileID: 1243694925}
   muzzleFlash: {fileID: 868002892}
   impactEffect: {fileID: 1742688432}
+  bulletTrail: {fileID: 1067453004268253393, guid: bd732dd401f56f347a67d55739391168, type: 3}
 --- !u!1 &451493322
 GameObject:
   m_ObjectHideFlags: 0
@@ -55316,6 +55318,7 @@ GameObject:
   - component: {fileID: 1540164231}
   - component: {fileID: 1540164232}
   - component: {fileID: 1540164233}
+  - component: {fileID: 1540164234}
   m_Layer: 6
   m_Name: WeaponHolder
   m_TagString: Untagged
@@ -55352,8 +55355,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedWeapon: 0
-  equipWeapon: {fileID: 0}
-  audioSource: {fileID: 0}
+  equipWeapon: {fileID: 8300000, guid: 5e7f633dda3117f4f90253f51ee065f0, type: 3}
+  audioSource: {fileID: 1540164234}
 --- !u!95 &1540164233
 Animator:
   serializedVersion: 3
@@ -55373,6 +55376,102 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!82 &1540164234
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540164230}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.117
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1544362251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58605,8 +58704,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8deefa483abd7e44bacea79a2b587414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  shotSound: {fileID: 0}
+  audioSource: {fileID: 1540164234}
+  shotSound: {fileID: 8300000, guid: b1d9b1d7f8df61e4394b3796449bd919, type: 3}
+  reloadSound: {fileID: 8300000, guid: 796c32af23ffeb5449df38ff95f9e2d4, type: 3}
   damage: 10
   range: 100
   fireRate: 5
@@ -58618,6 +58718,7 @@ MonoBehaviour:
   fpsCam: {fileID: 1243694925}
   muzzleFlash: {fileID: 1622821547}
   impactEffect: {fileID: 1742688432}
+  bulletTrail: {fileID: 1067453004268253393, guid: bd732dd401f56f347a67d55739391168, type: 3}
 --- !u!1 &1633948905 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 144464, guid: 6b6d8eb375911ec46b8e6509d99e85e1, type: 3}

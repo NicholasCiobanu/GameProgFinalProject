@@ -9,6 +9,7 @@ public class Weapon : MonoBehaviour
     //audio files
     public AudioSource audioSource;
     public AudioClip shotSound;
+    public AudioClip reloadSound;
     //shooting variables
     public float damage = 10f;
     public float range = 100f;
@@ -94,6 +95,7 @@ public class Weapon : MonoBehaviour
     {
         isReloading = true;
         animator.SetBool("Reloading",true);
+        audioSource.PlayOneShot(reloadSound);
         yield return new WaitForSeconds(reloadTime - .25f);
         animator.SetBool("Reloading",false); 
         yield return new WaitForSeconds(.25f);
