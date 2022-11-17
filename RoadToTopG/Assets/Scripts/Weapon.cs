@@ -70,8 +70,10 @@ public class Weapon : MonoBehaviour
         
         GameObject target = hit.transform.gameObject; //code for damage receiving
         if(target != null){
-            target.transform.GetComponent<NormalController>().health -= 10;
-
+            if (target.name.Equals("AbuTate"))
+                target.transform.GetComponent<TateAudioController>().health -= 10;
+            else
+                target.transform.GetComponent<NormalController>().health -= 10;
             // target.transform.GetComponentTakeDamage(damage);
         } 
         
