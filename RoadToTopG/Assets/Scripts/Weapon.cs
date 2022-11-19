@@ -88,7 +88,7 @@ public class Weapon : MonoBehaviour
                 else if (target.name.Equals("TristanTate"))
                     target.transform.GetComponent<TristanController>().health -= 5;
 
-                mm.AddMoney(15);
+                
 
             } 
         }
