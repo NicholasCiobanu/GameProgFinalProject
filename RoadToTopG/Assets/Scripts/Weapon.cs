@@ -1,4 +1,9 @@
 
+
+using System.Linq.Expressions;
+using System.Runtime.Versioning;
+using System.Reflection;
+using System.Runtime;
 using UnityEngine;
 using System.Collections;
 
@@ -70,22 +75,24 @@ public class Weapon : MonoBehaviour
         muzzleFlash.Play();
         RaycastHit hit;
         audioSource.PlayOneShot(shotSound);
-        //if the raycast hits something
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range)){
+        // Detect trigger
+        
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, (int)range,  1 << LayerMask.NameToLayer("Default"), QueryTriggerInteraction.Collide)){
             GameObject target = hit.transform.gameObject;
             TrailRenderer trail = Instantiate(bulletTrail,new Vector3(transform.position.x,transform.position.y + 0.15f,transform.position.z), Quaternion.identity);
             StartCoroutine(SpawnTrail(trail,hit));
+            Debug.Log(target);
             //code for damage receiving and adding money
+            Debug.Log(target.name);
             if(target != null && target.name == "Normal"){
-
-                target.transform.GetComponent<NormalController>().health -= 10;
-
+                Debug.Log("Hit");
+                GameObject normal = target;
+                while (normal.name != "Normal") {
+                    normal = target.transform.parent.gameObject;
+                }
+                normal.transform.GetComponent<NormalController>().health -= 10;
                 mm.AddMoney(15);
-
             } 
-        
-
-            
         }
     }
 
