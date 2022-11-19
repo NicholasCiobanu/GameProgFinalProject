@@ -3,7 +3,15 @@ guid: 8deefa483abd7e44bacea79a2b587414
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - audioSource: {instanceID: 0}
+  - shotSound: {fileID: 8300000, guid: 5e7f633dda3117f4f90253f51ee065f0, type: 3}
+  - animator: {instanceID: 0}
+  - zombieAnimator: {instanceID: 0}
+  - fpsCam: {instanceID: 0}
+  - muzzleFlash: {instanceID: 0}
+  - impactEffect: {instanceID: 0}
+  - bulletTrail: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

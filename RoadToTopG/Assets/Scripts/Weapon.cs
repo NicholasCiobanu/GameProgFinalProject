@@ -68,29 +68,29 @@ public class Weapon : MonoBehaviour
         currentAmmo--;
         muzzleFlash.Play();
         RaycastHit hit;
-        audioSource.PlayOneShot(shotSound);
+        // audioSource.PlayOneShot(shotSound);
         //if the raycast hits something
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range)){
-            Debug.Log(hit.transform.name);
-        
-        GameObject target = hit.transform.gameObject; //code for damage receiving
-        if(target != null){
-            if (target.name.Equals("AbuTate"))
-            {
-                target.transform.GetComponent<TateAudioController>().health -= 10;
-                mm.AddMoney(15);
-            }
-            else if (target.name.Equals("Normal"))
-            {
-                target.transform.GetComponent<NormalController>().health -= 10;
-                mm.AddMoney(15);
-            }
-            
-            // target.transform.GetComponentTakeDamage(damage);
-        } 
-        
+            GameObject target = hit.transform.gameObject;
+            TrailRenderer trail = Instantiate(bulletTrail,new Vector3(transform.position.x,transform.position.y + 0.15f,transform.position.z), Quaternion.identity);
+            StartCoroutine(SpawnTrail(trail,hit));
+            //code for damage receiving and adding money
+            if(target != null){
 
-            
+                if (target.name.Equals("Normal"))
+                    target.transform.GetComponent<NormalController>().health -= 10;
+                else if (target.name.Equals("AndrewTate"))
+                    target.transform.GetComponent<AndrewTateController>().health -= 5;
+                else if (target.name.Equals("Kanye"))
+                    target.transform.GetComponent<KanyeController>().health -= 5;
+                else if (target.name.Equals("Sneako"))
+                    target.transform.GetComponent<SneakoController>().health -= 5;
+                else if (target.name.Equals("TristanTate"))
+                    target.transform.GetComponent<TristanController>().health -= 5;
+
+                mm.AddMoney(15);
+
+            } 
         }
     }
 
