@@ -1,4 +1,9 @@
 
+
+using System.Linq.Expressions;
+using System.Runtime.Versioning;
+using System.Reflection;
+using System.Runtime;
 using UnityEngine;
 using System.Collections;
 
@@ -9,6 +14,7 @@ public class Weapon : MonoBehaviour
     //audio files
     public AudioSource audioSource;
     public AudioClip shotSound;
+    public AudioClip reloadSound;
     //shooting variables
     public float damage = 10f;
     public float range = 100f;
@@ -68,12 +74,13 @@ public class Weapon : MonoBehaviour
         currentAmmo--;
         muzzleFlash.Play();
         RaycastHit hit;
-        // audioSource.PlayOneShot(shotSound);
+        audioSource.PlayOneShot(shotSound);
         //if the raycast hits something
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range)){
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, (int)range,  1 << LayerMask.NameToLayer("Default"), QueryTriggerInteraction.Collide)){
             GameObject target = hit.transform.gameObject;
             TrailRenderer trail = Instantiate(bulletTrail,new Vector3(transform.position.x,transform.position.y + 0.15f,transform.position.z), Quaternion.identity);
             StartCoroutine(SpawnTrail(trail,hit));
+            Debug.Log(target);
             //code for damage receiving and adding money
             if(target != null){
 
@@ -100,6 +107,7 @@ public class Weapon : MonoBehaviour
     {
         isReloading = true;
         animator.SetBool("Reloading",true);
+        audioSource.PlayOneShot(reloadSound);
         yield return new WaitForSeconds(reloadTime - .25f);
         animator.SetBool("Reloading",false); 
         yield return new WaitForSeconds(.25f);
