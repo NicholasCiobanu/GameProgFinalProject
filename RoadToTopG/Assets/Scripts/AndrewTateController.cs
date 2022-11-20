@@ -16,6 +16,10 @@ public class AndrewTateController : MonoBehaviour
     private bool playedBreatheAirClip;
 
     [SerializeField]
+    public AudioClip cantBanMeClip;
+    private bool playedCantBanMeClip;
+
+    [SerializeField]
     public int health;
     Animator animator;
 
@@ -38,6 +42,7 @@ public class AndrewTateController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         playedHaramClip = false;
         playedBreatheAirClip = false;
+        playedCantBanMeClip = false;
         health = 100;
         animator = GetComponent<Animator>();    
     }
@@ -64,6 +69,11 @@ public class AndrewTateController : MonoBehaviour
         {
             audioSource.PlayOneShot(breatheAirClip);
             playedBreatheAirClip = true;
+        } 
+        if (health <= 0 && !playedCantBanMeClip)
+        {
+            audioSource.PlayOneShot(cantBanMeClip);
+            playedCantBanMeClip = true;
         } 
         
 
