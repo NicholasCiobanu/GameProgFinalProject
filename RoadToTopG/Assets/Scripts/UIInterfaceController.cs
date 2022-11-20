@@ -2,11 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIInterfaceController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private AudioSource audioSource;
+    [SerializeField]
+    public AudioClip backWhereYouStartedClip;
+    private bool playedBackWhereYouStartedClip;
     private int playerMaxHealth = 100;
     private int playerHealth;
     [SerializeField] private GameObject healthText;
@@ -14,6 +18,8 @@ public class UIInterfaceController : MonoBehaviour
     float nextTimeToAttack = 0f;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        playedBackWhereYouStartedClip = false;
         playerHealth = playerMaxHealth;
     }
 
@@ -25,7 +31,14 @@ public class UIInterfaceController : MonoBehaviour
         {   
             nextTimeToAttack = Time.time + 1f;
             playerHealth -= 10;
+            Debug.Log("Player health: " + playerHealth);
             healthText.GetComponent<Text>().text = "Health: " + playerHealth + "/" + playerMaxHealth;
+            if (playerHealth <= 0 && !playedBackWhereYouStartedClip)
+            {
+                audioSource.PlayOneShot(backWhereYouStartedClip);
+                playedBackWhereYouStartedClip = true;
+                // SceneManager.LoadScene("AbuTateScene");
+            }
         }
     }
 

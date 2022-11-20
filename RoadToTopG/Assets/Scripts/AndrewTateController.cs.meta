@@ -1,12 +1,13 @@
 fileFormatVersion: 2
-guid: 98051dbf7c1761440bf6c109bf3a3cf2
+guid: 68388515073607741aa7d4a31f925877
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - backWhereYouStartedClip: {fileID: 8300000, guid: 5a99175a9f47bdb4a8aed1ba06581fa6, type: 3}
+  - haramClip: {fileID: 8300000, guid: 93057d43819bf934f866caedec60e8db, type: 3}
+  - NavMeshAgent: {instanceID: 0}
+  - Player: {instanceID: 0}
   - healthText: {instanceID: 0}
-  - zombieAnimator: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
