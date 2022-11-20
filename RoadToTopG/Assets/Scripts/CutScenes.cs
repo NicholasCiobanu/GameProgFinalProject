@@ -10,23 +10,31 @@ public class CutScenes : MonoBehaviour
     public GameObject Cam3;
 
 
-[SerializeField] private Animator TristanTate = null;
-[SerializeField] private Animator Sneako = null;
-[SerializeField] private Animator Kanye = null;
-[SerializeField] private Animator AndrewTate = null;
+    [SerializeField] private Animator TristanTate;
+    [SerializeField] private TristanController tristanController;
+    [SerializeField] private Animator Sneako = null;
+    [SerializeField] private SneakoController sneakoController;
+    [SerializeField] private Animator Kanye = null;
+    [SerializeField] private KanyeController kanyeController;
+
+    [SerializeField] private Animator AndrewTate = null;
+    [SerializeField] private AndrewTateController andrewController;
 
 
 
- void Start()
+
+    void Start()
     {
-  TristanTate.GetComponent<Animator>();
-  Sneako.GetComponent<Animator>();
-  Kanye.GetComponent<Animator>();
-  AndrewTate.GetComponent<Animator>();
-  StartCoroutine (TheSequence());
+        TristanTate.GetComponent<Animator>();
+        Sneako.GetComponent<Animator>();
+        Kanye.GetComponent<Animator>();
+        AndrewTate.GetComponent<Animator>();
+
+        StartCoroutine(TheSequence());
     }
 
-    IEnumerator TheSequence() {
+    IEnumerator TheSequence()
+    {
         yield return new WaitForSeconds(8);
         Cam2.SetActive(true);
         Cam1.SetActive(false);
@@ -37,5 +45,10 @@ public class CutScenes : MonoBehaviour
         Sneako.enabled = (true);
         Kanye.enabled = (true);
         AndrewTate.enabled = (true);
- }
+
+        andrewController.enabled = (true);
+        kanyeController.enabled = (true);
+        sneakoController.enabled = (true);
+        tristanController.enabled = (true);
+    }
 }

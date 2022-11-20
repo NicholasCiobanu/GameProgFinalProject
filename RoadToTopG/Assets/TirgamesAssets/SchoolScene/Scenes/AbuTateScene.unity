@@ -2749,7 +2749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: e6ab94ea3d7bfb840aa41680fa79570e, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: e6ab94ea3d7bfb840aa41680fa79570e, type: 3}
       propertyPath: m_Controller
@@ -10072,7 +10072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: e6ab94ea3d7bfb840aa41680fa79570e, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: e6ab94ea3d7bfb840aa41680fa79570e, type: 3}
       propertyPath: m_Controller
@@ -14732,6 +14732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
   shotSound: {fileID: 0}
+  reloadSound: {fileID: 0}
   damage: 10
   range: 100
   fireRate: 3
@@ -22155,7 +22156,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661555690}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df9ddd18e4ed3744baa9511d0bd001a4, type: 3}
   m_Name: 
@@ -22166,19 +22167,6 @@ MonoBehaviour:
   NavMeshAgent: {fileID: 661555698}
   Player: {fileID: 1113401104}
   healthText: {fileID: 1813018557}
---- !u!65 &661555693
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661555690}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.48223394, y: 1.6607274, z: 0.26468724}
-  m_Center: {x: 0.009067655, y: 0.8685979, z: 0.010519316}
 --- !u!82 &661555694
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38558,7 +38546,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1030879004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38566,7 +38554,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030879003}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5da024187d6c784e830a1f0f1f9b45d, type: 3}
   m_Name: 
@@ -38575,9 +38563,13 @@ MonoBehaviour:
   Cam2: {fileID: 674210801}
   Cam3: {fileID: 1243694922}
   TristanTate: {fileID: 521093846}
+  tristanController: {fileID: 1173714818}
   Sneako: {fileID: 1160416921}
+  sneakoController: {fileID: 1519082167}
   Kanye: {fileID: 1658275675}
+  kanyeController: {fileID: 661555692}
   AndrewTate: {fileID: 1412972945}
+  andrewController: {fileID: 736834608}
 --- !u!4 &1030879005
 Transform:
   m_ObjectHideFlags: 0
@@ -43756,7 +43748,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173714813}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3098f6da4a835f346802f880c4870dd3, type: 3}
   m_Name: 
@@ -45926,7 +45918,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1243694923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54288,7 +54280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: e6ab94ea3d7bfb840aa41680fa79570e, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: e6ab94ea3d7bfb840aa41680fa79570e, type: 3}
       propertyPath: m_Controller
@@ -55522,7 +55514,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519082164}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4ab68894cc507248bf6c606e2f9829a, type: 3}
   m_Name: 
@@ -55534,19 +55526,6 @@ MonoBehaviour:
   NavMeshAgent: {fileID: 1519082172}
   Player: {fileID: 1113401104}
   healthText: {fileID: 1813018557}
---- !u!65 &1519082168
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519082164}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.43957037, y: 1.6000103, z: 0.27778527}
-  m_Center: {x: 0.0044613676, y: 0.90759486, z: -0.031300813}
 --- !u!136 &1519082169
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -59977,6 +59956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
   shotSound: {fileID: 0}
+  reloadSound: {fileID: 0}
   damage: 10
   range: 100
   fireRate: 5
@@ -64813,7 +64793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: e6ab94ea3d7bfb840aa41680fa79570e, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: e6ab94ea3d7bfb840aa41680fa79570e, type: 3}
       propertyPath: m_Controller
@@ -64851,7 +64831,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!111 &1744314110
 Animation:
   m_ObjectHideFlags: 0
