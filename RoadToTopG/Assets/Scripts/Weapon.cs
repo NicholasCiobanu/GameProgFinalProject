@@ -22,8 +22,7 @@ public class Weapon : MonoBehaviour
     private float nextTimeToFire = 0f;
 
     //reload and ammunition variables
-    public int magSize;
-    public int maxAmmo;
+    public int maxAmmo = 10;
     private int currentAmmo;
     public float reloadTime = 1f;
     public bool isReloading = false;
@@ -43,7 +42,7 @@ public class Weapon : MonoBehaviour
 
     void Start () 
     {
-        currentAmmo = magSize;
+        currentAmmo = maxAmmo;
         mm = FindObjectOfType<MoneyManager>();
     }
 
@@ -58,7 +57,7 @@ public class Weapon : MonoBehaviour
         if (isReloading)
             return;
 
-        if (currentAmmo == 0  && maxAmmo >= 0|| Input.GetKey(KeyCode.R) && currentAmmo != magSize)
+        if (currentAmmo <= 0)
         {
             StartCoroutine(Reload());
             return;
@@ -68,14 +67,10 @@ public class Weapon : MonoBehaviour
             nextTimeToFire = Time.time + (1f/fireRate);
             Shoot();
         }
-        GameObject.Find("CurrentMag").GetComponent<UnityEngine.UI.Text>().text = currentAmmo.ToString();
-        GameObject.Find("RemainMag").GetComponent<UnityEngine.UI.Text>().text = maxAmmo.ToString();
     }
 
     //will get called every time user shoots
     void Shoot(){
-        if (currentAmmo <= 0)
-            return;
         currentAmmo--;
         muzzleFlash.Play();
         RaycastHit hit;
@@ -110,30 +105,14 @@ public class Weapon : MonoBehaviour
 
     IEnumerator Reload()
     {
-        if (maxAmmo <= 0 && currentAmmo <= 0){   
-            isReloading = true;
-            animator.SetBool("Reloading",true);
-            yield return new WaitForSeconds(0f);
-        }
-        else if (maxAmmo <= 0){
-            yield return new WaitForSeconds(0f);
-        }
-        else {
         isReloading = true;
         animator.SetBool("Reloading",true);
+        audioSource.PlayOneShot(reloadSound);
+        yield return new WaitForSeconds(reloadTime - .25f);
+        animator.SetBool("Reloading",false); 
         yield return new WaitForSeconds(.25f);
-        if (maxAmmo > 0){
-            int ammoAdded = magSize - currentAmmo;
-            currentAmmo += ammoAdded;
-            maxAmmo -= ammoAdded;
-            if (maxAmmo <= 0)
-                maxAmmo = 0;
-            audioSource.PlayOneShot(reloadSound);
-            animator.SetBool("Reloading",false); 
-            yield return new WaitForSeconds(.25f);
-        }
+        currentAmmo = maxAmmo;
         isReloading = false;
-        }
     }
 
     IEnumerator SpawnTrail(TrailRenderer trail, RaycastHit hit){
