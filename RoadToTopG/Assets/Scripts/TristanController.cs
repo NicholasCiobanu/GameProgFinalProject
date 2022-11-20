@@ -8,16 +8,12 @@ public class TristanController : MonoBehaviour
 {
     private AudioSource audioSource;
     [SerializeField]
-    public AudioClip comeBackToRealityClip;
-    private bool playedComeBackToRealityClip;
+    public AudioClip youNeedTobeMoreMisogynisticClip;
+    private bool playedYouNeedTobeMoreMisogynisticClip;
 
     [SerializeField]
-    public AudioClip getOffTheTiktokClip;
-    private bool playedGetOffTheTiktokClip;
-
-    [SerializeField]
-    public AudioClip youAreSoStupidClip;
-    private bool playedYouAreSoStupidClip;
+    public AudioClip dontBeMisogynisticClip;
+    private bool playedDontBeMisogynisticClip;
 
     [SerializeField]
     public int health;
@@ -40,9 +36,8 @@ public class TristanController : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        playedComeBackToRealityClip = false;
-        playedGetOffTheTiktokClip = false;
-        playedYouAreSoStupidClip = false;
+        playedYouNeedTobeMoreMisogynisticClip = false;
+        playedDontBeMisogynisticClip = false;
         health = 100;
         animator = GetComponent<Animator>();    
     }
@@ -60,21 +55,21 @@ public class TristanController : MonoBehaviour
             NavMeshAgent.SetDestination(Player.position);
         }
 
-        // if (health <= 80 && !playedComeBackToRealityClip)
-        // {
-        //     audioSource.PlayOneShot(comeBackToRealityClip);
-        //     playedComeBackToRealityClip = true;
-        // } 
+        if (health <= 80 && !playedYouNeedTobeMoreMisogynisticClip)
+        {
+            audioSource.PlayOneShot(youNeedTobeMoreMisogynisticClip);
+            playedYouNeedTobeMoreMisogynisticClip = true;
+        } 
         // if (health <= 50 && !playedGetOffTheTiktokClip)
         // {
         //     audioSource.PlayOneShot(getOffTheTiktokClip);
         //     playedGetOffTheTiktokClip = true;
         // } 
-        // if (health <= 0 && !playedYouAreSoStupidClip)
-        // {
-        //     audioSource.PlayOneShot(youAreSoStupidClip);
-        //     playedYouAreSoStupidClip = true;
-        // } 
+        if (health <= 0 && !playedDontBeMisogynisticClip)
+        {
+            audioSource.PlayOneShot(dontBeMisogynisticClip);
+            playedDontBeMisogynisticClip = true;
+        } 
         
 
 
