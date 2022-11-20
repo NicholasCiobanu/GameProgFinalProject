@@ -22157,7 +22157,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 661555690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7704d34ff4f30a74e8f2aaeca935bd7e, type: 3}
+  m_Script: {fileID: 11500000, guid: df9ddd18e4ed3744baa9511d0bd001a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   iGuessWellNeverKnowClip: {fileID: 8300000, guid: 75a651b032d2f5b498cad98abd3d885e, type: 3}
@@ -26075,6 +26075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   haramClip: {fileID: 8300000, guid: 93057d43819bf934f866caedec60e8db, type: 3}
   breatheAirClip: {fileID: 8300000, guid: 57a6c43f0239c364dbd2461141660750, type: 3}
+  cantBanMeClip: {fileID: 8300000, guid: 8f870ed370ccba94b948376cbf256777, type: 3}
   health: 100
   NavMeshAgent: {fileID: 736834607}
   Player: {fileID: 1113401104}
@@ -43757,16 +43758,111 @@ MonoBehaviour:
   m_GameObject: {fileID: 1173714813}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e590fe92101fa944af421f63d306ce2, type: 3}
+  m_Script: {fileID: 11500000, guid: 3098f6da4a835f346802f880c4870dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comeBackToRealityClip: {fileID: 0}
-  getOffTheTiktokClip: {fileID: 0}
-  youAreSoStupidClip: {fileID: 0}
+  youNeedTobeMoreMisogynisticClip: {fileID: 8300000, guid: a0fed646e51ef5f42b4c7772ae382dc2, type: 3}
+  dontBeMisogynisticClip: {fileID: 8300000, guid: 0f10528717c78ad408d8f8f89e0e28b9, type: 3}
   health: 100
   NavMeshAgent: {fileID: 1173714814}
   Player: {fileID: 1113401104}
   healthText: {fileID: 0}
+--- !u!82 &1173714819
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173714813}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1173955974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55335,7 +55431,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.884
+  m_Volume: 0.544
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -55428,7 +55524,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1519082164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d88d3a40da2a944193420116b793a20, type: 3}
+  m_Script: {fileID: 11500000, guid: c4ab68894cc507248bf6c606e2f9829a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   comeBackToRealityClip: {fileID: 8300000, guid: 5fe46da0a20c08247910c437a11eebe5, type: 3}
