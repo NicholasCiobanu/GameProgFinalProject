@@ -14,31 +14,27 @@ public class UIInterfaceController : MonoBehaviour
     private int playerMaxHealth = 100;
     private int playerHealth;
     [SerializeField] private GameObject healthText;
-    public Animator zombieAnimator;
+    //public Animator zombieAnimator;
     float nextTimeToAttack = 0f;
+    private GameObject player;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         playedBackWhereYouStartedClip = false;
         playerHealth = playerMaxHealth;
+        player = GameObject.Find("PlayerCapsule");
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if(zombieAnimator.GetBool("isInRange") && Time.time >= nextTimeToAttack)
-        {   
-            nextTimeToAttack = Time.time + 1f;
-            playerHealth -= 10;
-            Debug.Log("Player health: " + playerHealth);
-            healthText.GetComponent<Text>().text = "Health: " + playerHealth + "/" + playerMaxHealth;
-            if (playerHealth <= 0 && !playedBackWhereYouStartedClip)
-            {
-                audioSource.PlayOneShot(backWhereYouStartedClip);
-                playedBackWhereYouStartedClip = true;
-                // SceneManager.LoadScene("AbuTateScene");
-            }
+        playerHealth = player.GetComponent<HealthController>().health;
+        healthText.GetComponent<Text>().text = "Health: " + playerHealth + "/" + playerMaxHealth;
+        if (playerHealth <= 0 && !playedBackWhereYouStartedClip)
+        {
+            audioSource.PlayOneShot(backWhereYouStartedClip);
+            playedBackWhereYouStartedClip = true;
+            // SceneManager.LoadScene("AbuTateScene");
         }
     }
 

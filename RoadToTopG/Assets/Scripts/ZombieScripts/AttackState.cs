@@ -8,6 +8,7 @@ public class AttackState : StateMachineBehaviour
     private GameObject player;
     private GameObject zombie;
     private float distance;
+    float nextTimeToAttack = 0f;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -20,18 +21,36 @@ public class AttackState : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         distance = Vector3.Distance(player.transform.position, zombie.transform.position);
-        
-        if (distance > 1)
+
+        if (distance > 1 )
         {
             animator.SetBool("isInRange", false);
         }
-        
+        else if (Time.time >= nextTimeToAttack)
+        {
+            nextTimeToAttack = Time.time + 1f;
+            player.GetComponent<HealthController>().health -= 10;
+        }
+        /*
+         *  if (zombieAnimator.GetBool("isInRange") && Time.time >= nextTimeToAttack)
+        {   
+            nextTimeToAttack = Time.time + 1f;
+            playerHealth -= 10;
+            Debug.Log("Player health: " + playerHealth);
+            healthText.GetComponent<Text>().text = "Health: " + player.GetComponent<HealthController>().health + "/" + playerMaxHealth;
+            if (playerHealth <= 0 && !playedBackWhereYouStartedClip)
+            {
+                audioSource.PlayOneShot(backWhereYouStartedClip);
+                playedBackWhereYouStartedClip = true;
+                // SceneManager.LoadScene("AbuTateScene");
+            }
+        }*/
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
