@@ -25,7 +25,7 @@ public class Weapon : MonoBehaviour
     public int magSize;
     public int maxAmmo;
     private int currentAmmo;
-    public float reloadTime = 1f;
+    public float reloadTime;
     public bool isReloading = false;
     public Animator animator;
     public Animator zombieAnimator;
@@ -129,10 +129,10 @@ public class Weapon : MonoBehaviour
             if (maxAmmo <= 0)
                 maxAmmo = 0;
             audioSource.PlayOneShot(reloadSound);
+            yield return new WaitForSeconds(reloadTime);
             animator.SetBool("Reloading",false); 
-            yield return new WaitForSeconds(.25f);
+            isReloading = false;
         }
-        isReloading = false;
         }
     }
 
