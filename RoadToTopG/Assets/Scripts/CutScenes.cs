@@ -46,9 +46,9 @@ public class CutScenes : MonoBehaviour
         Kanye.enabled = (true);
         AndrewTate.enabled = (true);
 
-        andrewController.enabled = (true);
+        //andrewController.enabled = (true);
         kanyeController.enabled = (true);
-        sneakoController.enabled = (true);
-        tristanController.enabled = (true);
+        //sneakoController.enabled = (true);
+        //tristanController.enabled = (true);
     }
 }
