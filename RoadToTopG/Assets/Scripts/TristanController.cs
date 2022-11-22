@@ -82,12 +82,8 @@ public class TristanController : MonoBehaviour
             women3.SetActive(true);
             women4.SetActive(true);
 
-<<<<<<< HEAD
             andrewTate.enabled = (true);
             andrewController.enabled = (true);
-=======
-            //Instantiate(women, transform.position, transform.rotation);
->>>>>>> main
 
         }
 

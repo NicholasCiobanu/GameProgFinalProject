@@ -1,7 +1,5 @@
 
 
-using System.Net.Mail;
-using System.Diagnostics.Tracing;
 using System.Linq.Expressions;
 using System.Runtime.Versioning;
 using System.Reflection;
@@ -87,8 +85,7 @@ public class Weapon : MonoBehaviour
             GameObject target = hit.transform.gameObject;
             TrailRenderer trail = Instantiate(bulletTrail,new Vector3(transform.position.x,transform.position.y + 0.15f,transform.position.z), Quaternion.identity);
             StartCoroutine(SpawnTrail(trail,hit));
-            target.GetComponent<NormalController>().health -= (int)damage;
-            mm.AddMoney(10);
+            Debug.Log(target);
             //code for damage receiving and adding money
             if(target != null){
 
