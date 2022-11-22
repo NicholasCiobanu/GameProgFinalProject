@@ -1,4 +1,5 @@
 
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,7 @@ public class NormalController : MonoBehaviour
     [SerializeField]
     private NavMeshAgent NavMeshAgent;
 
-    [SerializeField]
+    
     private Transform Player;
     
 
@@ -26,7 +27,7 @@ public class NormalController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Player = GameObject.FindGameObjectWithTag("Player").transform;
         health = 100;
         animator = GetComponent<Animator>();    
     }
@@ -35,8 +36,10 @@ public class NormalController : MonoBehaviour
     void Update()
     {
         
+        Debug.Log(health);
         if (health < 0)
         {
+        
             animator.SetBool("isDead", true);
         } else {
             NavMeshAgent.SetDestination(Player.position);
