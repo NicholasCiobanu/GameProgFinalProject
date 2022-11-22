@@ -19,14 +19,22 @@ public class TristanController : MonoBehaviour
     public int health;
     Animator animator;
 
-    
+    [SerializeField] GameObject women;
+    [SerializeField] GameObject women2;
+    [SerializeField] GameObject women3;
+    [SerializeField] GameObject women4;
+
+
 
     [SerializeField]
     private NavMeshAgent NavMeshAgent;
 
     [SerializeField]
     private Transform Player;
-    
+
+    [SerializeField] private Animator andrewTate = null;
+    [SerializeField] private AndrewTateController andrewController;
+
 
     //  Interface
     [SerializeField]
@@ -39,19 +47,20 @@ public class TristanController : MonoBehaviour
         playedYouNeedTobeMoreMisogynisticClip = false;
         playedDontBeMisogynisticClip = false;
         health = 100;
-        animator = GetComponent<Animator>();    
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        
+
         if (health <= 0)
         {
             animator.SetBool("isDead", true);
         }
-        else {
+        else
+        {
             NavMeshAgent.SetDestination(Player.position);
         }
 
@@ -59,7 +68,7 @@ public class TristanController : MonoBehaviour
         {
             audioSource.PlayOneShot(youNeedTobeMoreMisogynisticClip);
             playedYouNeedTobeMoreMisogynisticClip = true;
-        } 
+        }
         // if (health <= 50 && !playedGetOffTheTiktokClip)
         // {
         //     audioSource.PlayOneShot(getOffTheTiktokClip);
@@ -69,10 +78,13 @@ public class TristanController : MonoBehaviour
         {
             audioSource.PlayOneShot(dontBeMisogynisticClip);
             playedDontBeMisogynisticClip = true;
-        } 
-        
+            women.SetActive(true);
+            women2.SetActive(true);
+            women3.SetActive(true);
+            women4.SetActive(true);
 
-
+            andrewTate.enabled = (true);
+            andrewController.enabled = (true);
+        }
     }
-    
 }

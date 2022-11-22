@@ -23,14 +23,17 @@ public class SneakoController : MonoBehaviour
     public int health;
     Animator animator;
 
-    
+
 
     [SerializeField]
     private NavMeshAgent NavMeshAgent;
 
     [SerializeField]
     private Transform Player;
-    
+
+    [SerializeField] private Animator tristanTate = null;
+    [SerializeField] private TristanController tristanController;
+
 
     //  Interface
     [SerializeField]
@@ -44,19 +47,20 @@ public class SneakoController : MonoBehaviour
         playedGetOffTheTiktokClip = false;
         playedYouAreSoStupidClip = false;
         health = 100;
-        animator = GetComponent<Animator>();    
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        
+
         if (health <= 0)
         {
             animator.SetBool("isDead", true);
         }
-        else {
+        else
+        {
             NavMeshAgent.SetDestination(Player.position);
         }
 
@@ -64,20 +68,18 @@ public class SneakoController : MonoBehaviour
         {
             audioSource.PlayOneShot(comeBackToRealityClip);
             playedComeBackToRealityClip = true;
-        } 
+        }
         if (health <= 50 && !playedGetOffTheTiktokClip)
         {
             audioSource.PlayOneShot(getOffTheTiktokClip);
             playedGetOffTheTiktokClip = true;
-        } 
+        }
         if (health <= 0 && !playedYouAreSoStupidClip)
         {
             audioSource.PlayOneShot(youAreSoStupidClip);
             playedYouAreSoStupidClip = true;
-        } 
-        
-
-
+            tristanTate.enabled = (true);
+            tristanController.enabled = (true);
+        }
     }
-    
 }
