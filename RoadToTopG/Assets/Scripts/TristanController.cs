@@ -19,6 +19,11 @@ public class TristanController : MonoBehaviour
     public int health;
     Animator animator;
 
+    [SerializeField] GameObject women;
+    [SerializeField] GameObject women2;
+    [SerializeField] GameObject women3;
+    [SerializeField] GameObject women4;
+
     
 
     [SerializeField]
@@ -39,7 +44,7 @@ public class TristanController : MonoBehaviour
         playedYouNeedTobeMoreMisogynisticClip = false;
         playedDontBeMisogynisticClip = false;
         health = 100;
-        animator = GetComponent<Animator>();    
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -69,8 +74,15 @@ public class TristanController : MonoBehaviour
         {
             audioSource.PlayOneShot(dontBeMisogynisticClip);
             playedDontBeMisogynisticClip = true;
-        } 
-        
+            women.SetActive(true);
+            women2.SetActive(true);
+            women3.SetActive(true);
+            women4.SetActive(true);
+
+            //Instantiate(women, transform.position, transform.rotation);
+
+        }
+
 
 
     }
