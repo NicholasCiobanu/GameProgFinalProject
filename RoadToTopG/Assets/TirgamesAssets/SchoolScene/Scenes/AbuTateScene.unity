@@ -22377,7 +22377,7 @@ MonoBehaviour:
   iGuessWellNeverKnowClip: {fileID: 8300000, guid: 75a651b032d2f5b498cad98abd3d885e, type: 3}
   bushDoesntCareClip: {fileID: 8300000, guid: 2e943b57ca00afe45911a5385759d20d, type: 3}
   health: 100
-  sneako: {fileID: 0}
+  sneako: {fileID: 1519082165}
   sneakoController: {fileID: 1519082167}
   NavMeshAgent: {fileID: 661555698}
   Player: {fileID: 8997996946200971555}
@@ -26320,7 +26320,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 736834605}
   m_Enabled: 0
   m_AgentTypeID: 0
-  m_Radius: 0.00001
+  m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -55835,6 +55835,11 @@ Transform:
 --- !u!1 &1519082164 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: e6ab94ea3d7bfb840aa41680fa79570e, type: 3}
+  m_PrefabInstance: {fileID: 80355713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1519082165 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: e6ab94ea3d7bfb840aa41680fa79570e, type: 3}
   m_PrefabInstance: {fileID: 80355713}
   m_PrefabAsset: {fileID: 0}
 --- !u!82 &1519082166
