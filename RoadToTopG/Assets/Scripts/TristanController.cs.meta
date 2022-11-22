@@ -3,7 +3,13 @@ guid: 3098f6da4a835f346802f880c4870dd3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - youNeedTobeMoreMisogynisticClip: {instanceID: 0}
+  - dontBeMisogynisticClip: {instanceID: 0}
+  - women: {instanceID: 0}
+  - NavMeshAgent: {instanceID: 0}
+  - Player: {instanceID: 0}
+  - healthText: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
