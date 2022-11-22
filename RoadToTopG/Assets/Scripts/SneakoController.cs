@@ -30,7 +30,10 @@ public class SneakoController : MonoBehaviour
 
     [SerializeField]
     private Transform Player;
-    
+
+    [SerializeField] private Animator tristanTate = null;
+    [SerializeField] private TristanController tristanController;
+
 
     //  Interface
     [SerializeField]
@@ -74,6 +77,8 @@ public class SneakoController : MonoBehaviour
         {
             audioSource.PlayOneShot(youAreSoStupidClip);
             playedYouAreSoStupidClip = true;
+            tristanTate.enabled = (true);
+            tristanController.enabled = (true);
         } 
         
 

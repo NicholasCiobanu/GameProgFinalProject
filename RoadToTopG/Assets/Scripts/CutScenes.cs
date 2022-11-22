@@ -10,15 +10,16 @@ public class CutScenes : MonoBehaviour
     public GameObject Cam2;
     public GameObject Cam3;
 
-
-    [SerializeField] private Animator TristanTate;
-    [SerializeField] private TristanController tristanController;
-    [SerializeField] private Animator Sneako = null;
-    [SerializeField] private SneakoController sneakoController;
-    [SerializeField] private Animator Kanye = null;
+    [SerializeField] private Animator kanye = null;
     [SerializeField] private KanyeController kanyeController;
     [SerializeField] private GameObject crosshair;
     [SerializeField] private GameObject crosshair1;
+<<<<<<< HEAD
+    [SerializeField] private GameObject healthText;
+
+    void Start()
+    {
+=======
 
     [SerializeField] private Animator AndrewTate = null;
     [SerializeField] private AndrewTateController andrewController;
@@ -35,6 +36,7 @@ public class CutScenes : MonoBehaviour
         
 
 
+>>>>>>> main
         StartCoroutine(TheSequence());
     }
 
@@ -48,6 +50,14 @@ public class CutScenes : MonoBehaviour
         yield return new WaitForSeconds(9);
         Cam3.SetActive(true);
         Cam2.SetActive(false);
+<<<<<<< HEAD
+        kanye.enabled = (true);
+
+        kanyeController.enabled = (true);
+        crosshair.SetActive(true);
+        crosshair1.SetActive(true);
+        healthText.SetActive(true);
+=======
         TristanTate.enabled = (true);
         //Sneako.enabled = (true);
         //Kanye.enabled = (true);
@@ -59,5 +69,6 @@ public class CutScenes : MonoBehaviour
         tristanController.enabled = (true);
         crosshair.SetActive(true);
         crosshair1.SetActive(true);
+>>>>>>> main
     }
 }
