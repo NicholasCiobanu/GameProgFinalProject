@@ -31,10 +31,7 @@ public class TristanController : MonoBehaviour
 
     [SerializeField]
     private Transform Player;
-
-    [SerializeField] private Animator andrewTate = null;
-    [SerializeField] private AndrewTateController andrewController;
-
+    
 
     //  Interface
     [SerializeField]
@@ -82,12 +79,7 @@ public class TristanController : MonoBehaviour
             women3.SetActive(true);
             women4.SetActive(true);
 
-<<<<<<< HEAD
-            andrewTate.enabled = (true);
-            andrewController.enabled = (true);
-=======
             //Instantiate(women, transform.position, transform.rotation);
->>>>>>> main
 
         }
 
