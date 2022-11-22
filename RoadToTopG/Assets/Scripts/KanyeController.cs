@@ -19,14 +19,15 @@ public class KanyeController : MonoBehaviour
     public int health;
     Animator animator;
 
-    
+    [SerializeField] private Animator sneako = null;
+    [SerializeField] private SneakoController sneakoController;
 
     [SerializeField]
     private NavMeshAgent NavMeshAgent;
 
     [SerializeField]
     private Transform Player;
-    
+
 
     //  Interface
     [SerializeField]
@@ -39,19 +40,20 @@ public class KanyeController : MonoBehaviour
         playedIGuessWellNeverKnowClip = false;
         playedBushDoesntCareClip = false;
         health = 100;
-        animator = GetComponent<Animator>();    
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        
+
         if (health <= 0)
         {
             animator.SetBool("isDead", true);
         }
-        else {
+        else
+        {
             NavMeshAgent.SetDestination(Player.position);
         }
 
@@ -59,15 +61,13 @@ public class KanyeController : MonoBehaviour
         {
             audioSource.PlayOneShot(bushDoesntCareClip);
             playedBushDoesntCareClip = true;
-        } 
+        }
         if (health <= 0 && !playedIGuessWellNeverKnowClip)
         {
             audioSource.PlayOneShot(iGuessWellNeverKnowClip);
             playedIGuessWellNeverKnowClip = true;
-        } 
-        
-
-
+            sneako.enabled = (true);
+            sneakoController.enabled = (true);
+        }
     }
-    
 }
