@@ -19,7 +19,8 @@ public class KanyeController : MonoBehaviour
     public int health;
     Animator animator;
 
-    
+    [SerializeField] private Animator sneako = null;
+    [SerializeField] private SneakoController sneakoController;
 
     [SerializeField]
     private NavMeshAgent NavMeshAgent;
@@ -64,8 +65,10 @@ public class KanyeController : MonoBehaviour
         {
             audioSource.PlayOneShot(iGuessWellNeverKnowClip);
             playedIGuessWellNeverKnowClip = true;
-        } 
-        
+            sneako.enabled = (true);
+            sneakoController.enabled = (true);
+        }
+
 
 
     }
