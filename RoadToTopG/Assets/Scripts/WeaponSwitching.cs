@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponSwitching : MonoBehaviour
 {
@@ -10,10 +11,17 @@ public class WeaponSwitching : MonoBehaviour
     AudioClip equipWeapon;
     [SerializeField]
     AudioSource audioSource;
+    [SerializeField]
+    Texture m4Texture;
+    [SerializeField]
+    Texture pistolTexture;
+    bool gameStart;
     // Start is called before the first frame update
     void Start()
     {
+        gameStart  = true;
         SelectWeapon();
+        GameObject.Find("m4Silhouette").GetComponent<RawImage>().texture = pistolTexture;
     }
 
     // Update is called once per frame
@@ -56,6 +64,7 @@ public class WeaponSwitching : MonoBehaviour
             {
                 if(!weapon.GetComponent<Weapon>().isReloading)
                 {
+                GameObject.Find("m4Silhouette").GetComponent<Animation>().Play();
                 audioSource.clip = equipWeapon;
                 audioSource.Play();
                 }
@@ -65,5 +74,16 @@ public class WeaponSwitching : MonoBehaviour
                 weapon.gameObject.SetActive(false);
             i++;
         }
+    }
+
+    void ChangeSilhouette(){
+        if (gameStart){
+            gameStart = false;
+            return;
+        }
+        if (GameObject.Find("m4Silhouette").GetComponent<RawImage>().texture == m4Texture)
+            GameObject.Find("m4Silhouette").GetComponent<RawImage>().texture = pistolTexture;
+        else if (GameObject.Find("m4Silhouette").GetComponent<RawImage>().texture == pistolTexture) 
+            GameObject.Find("m4Silhouette").GetComponent<RawImage>().texture = m4Texture;
     }
 }

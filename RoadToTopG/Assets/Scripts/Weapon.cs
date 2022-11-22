@@ -123,13 +123,13 @@ public class Weapon : MonoBehaviour
         animator.SetBool("Reloading",true);
         yield return new WaitForSeconds(.25f);
         if (maxAmmo > 0){
-            int ammoAdded = magSize - currentAmmo;
-            currentAmmo += ammoAdded;
-            maxAmmo -= ammoAdded;
             if (maxAmmo <= 0)
                 maxAmmo = 0;
             audioSource.PlayOneShot(reloadSound);
             yield return new WaitForSeconds(reloadTime);
+            int ammoAdded = magSize - currentAmmo;
+            currentAmmo += ammoAdded;
+            maxAmmo -= ammoAdded;
             animator.SetBool("Reloading",false); 
             isReloading = false;
         }
