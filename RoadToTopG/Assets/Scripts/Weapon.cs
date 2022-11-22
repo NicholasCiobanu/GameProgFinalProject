@@ -116,22 +116,23 @@ public class Weapon : MonoBehaviour
             yield return new WaitForSeconds(0f);
         }
         else if (maxAmmo <= 0){
+            animator.SetBool("Reloading",true);
             yield return new WaitForSeconds(0f);
         }
         else {
         isReloading = true;
         animator.SetBool("Reloading",true);
         yield return new WaitForSeconds(.25f);
-        if (maxAmmo > 0){
-            if (maxAmmo <= 0)
-                maxAmmo = 0;
-            audioSource.PlayOneShot(reloadSound);
-            yield return new WaitForSeconds(reloadTime);
-            int ammoAdded = magSize - currentAmmo;
-            currentAmmo += ammoAdded;
-            maxAmmo -= ammoAdded;
-            animator.SetBool("Reloading",false); 
-            isReloading = false;
+            if (maxAmmo > 0){
+                if (maxAmmo <= 0)
+                    maxAmmo = 0;
+                audioSource.PlayOneShot(reloadSound);
+                yield return new WaitForSeconds(reloadTime);
+                int ammoAdded = magSize - currentAmmo;
+                currentAmmo += ammoAdded;
+                maxAmmo -= ammoAdded;
+                animator.SetBool("Reloading",false); 
+                isReloading = false;
         }
         }
     }
