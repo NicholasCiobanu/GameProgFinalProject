@@ -22,12 +22,13 @@ public class KanyeController : MonoBehaviour
     [SerializeField] private Animator sneako = null;
     [SerializeField] private SneakoController sneakoController;
 
-    [SerializeField]
-    private NavMeshAgent NavMeshAgent;
+    //[SerializeField]
+    //private NavMeshAgent NavMeshAgent;
 
     [SerializeField]
-    private Transform Player;
+    private GameObject Player;
 
+    public float speed = 0.2f;
 
     //  Interface
     [SerializeField]
@@ -46,7 +47,7 @@ public class KanyeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
 
         if (health <= 0 && !playedIGuessWellNeverKnowClip)
         {
@@ -58,9 +59,10 @@ public class KanyeController : MonoBehaviour
         }
         else
         {
-            NavMeshAgent.SetDestination(Player.position);
+            transform.LookAt(Player.gameObject.transform);
+            transform.Translate(speed * Time.deltaTime * Vector3.forward);
         }
-
+        
         if (health < 500 && !playedBushDoesntCareClip)
         {
             audioSource.PlayOneShot(bushDoesntCareClip);

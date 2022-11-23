@@ -24,13 +24,10 @@ public class TristanController : MonoBehaviour
     [SerializeField] GameObject women3;
     [SerializeField] GameObject women4;
 
-
-
-    [SerializeField]
-    private NavMeshAgent NavMeshAgent;
-
     [SerializeField]
     private Transform Player;
+
+    public float speed = 0.2f;
 
     [SerializeField] private Animator andrewTate = null;
     [SerializeField] private AndrewTateController andrewController;
@@ -53,7 +50,7 @@ public class TristanController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
 
         if (health <= 0)
         {
@@ -61,9 +58,10 @@ public class TristanController : MonoBehaviour
         }
         else
         {
-            NavMeshAgent.SetDestination(Player.position);
+            transform.LookAt(Player.gameObject.transform);
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
-
+       
         if (health <= 750 && !playedYouNeedTobeMoreMisogynisticClip)
         {
             audioSource.PlayOneShot(youNeedTobeMoreMisogynisticClip);

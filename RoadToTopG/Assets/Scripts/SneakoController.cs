@@ -23,13 +23,10 @@ public class SneakoController : MonoBehaviour
     public int health;
     Animator animator;
 
-
-
-    [SerializeField]
-    private NavMeshAgent NavMeshAgent;
+    public float speed = 0.2f;
 
     [SerializeField]
-    private Transform Player;
+    private GameObject Player;
 
     [SerializeField] private Animator tristanTate = null;
     [SerializeField] private TristanController tristanController;
@@ -53,7 +50,7 @@ public class SneakoController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
 
         if (health <= 0)
         {
@@ -61,7 +58,8 @@ public class SneakoController : MonoBehaviour
         }
         else
         {
-            NavMeshAgent.SetDestination(Player.position);
+            transform.LookAt(Player.gameObject.transform);
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
 
         if (health <= 800 && !playedComeBackToRealityClip)
