@@ -36,7 +36,7 @@ public class NormalController : MonoBehaviour
     void Update()
     {
         
-        Debug.Log(health);
+        
         if (health < 0)
         {
         

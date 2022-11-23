@@ -15,12 +15,14 @@ public class TriggerDoorOpen : MonoBehaviour
 
     [SerializeField] private int cost;
     private MoneyManager mm;
+    private RoundManager rm;
 
  public GameObject uiObject;
 
     void Start() {
         uiObject.SetActive(false);
         mm = FindObjectOfType<MoneyManager>();
+        rm = FindObjectOfType<RoundManager>();
     }
 
     private void OnTriggerStay(Collider player) {
