@@ -5494,7 +5494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &153065961
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17937,7 +17937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &513755548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28604,7 +28604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &785030677
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31992,7 +31992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &867753830
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39757,6 +39757,12 @@ MonoBehaviour:
   crosshair: {fileID: 494211666}
   crosshair1: {fileID: 906521009}
   healthText: {fileID: 1061684276}
+  healtPic: {fileID: 153065960}
+  money: {fileID: 513755547}
+  magazine: {fileID: 867753829}
+  remainingMag: {fileID: 1612376939}
+  diagonalAmmo: {fileID: 785030676}
+  m4Silhouette: {fileID: 1261790643}
 --- !u!4 &1030879005
 Transform:
   m_ObjectHideFlags: 0
@@ -45079,7 +45085,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173714813}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
@@ -48101,7 +48107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1261790644
 RectTransform:
   m_ObjectHideFlags: 0
@@ -60655,7 +60661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1612376940
 RectTransform:
   m_ObjectHideFlags: 0
@@ -66447,7 +66453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: e6ab94ea3d7bfb840aa41680fa79570e, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: e6ab94ea3d7bfb840aa41680fa79570e, type: 3}
       propertyPath: m_Controller
