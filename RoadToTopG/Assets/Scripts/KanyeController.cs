@@ -48,9 +48,13 @@ public class KanyeController : MonoBehaviour
     {
 
 
-        if (health <= 0)
+        if (health <= 0 && !playedIGuessWellNeverKnowClip)
         {
             animator.SetBool("isDead", true);
+            audioSource.PlayOneShot(iGuessWellNeverKnowClip);
+            playedIGuessWellNeverKnowClip = true;
+            sneako.enabled = (true);
+            sneakoController.enabled = (true);
         }
         else
         {
@@ -61,13 +65,6 @@ public class KanyeController : MonoBehaviour
         {
             audioSource.PlayOneShot(bushDoesntCareClip);
             playedBushDoesntCareClip = true;
-        }
-        if (health <= 0 && !playedIGuessWellNeverKnowClip)
-        {
-            audioSource.PlayOneShot(iGuessWellNeverKnowClip);
-            playedIGuessWellNeverKnowClip = true;
-            sneako.enabled = (true);
-            sneakoController.enabled = (true);
         }
     }
 }

@@ -87,21 +87,22 @@ public class Weapon : MonoBehaviour
             GameObject target = hit.transform.gameObject;
             TrailRenderer trail = Instantiate(bulletTrail,new Vector3(transform.position.x,transform.position.y + 0.15f,transform.position.z), Quaternion.identity);
             StartCoroutine(SpawnTrail(trail,hit));
-            target.GetComponent<NormalController>().health -= (int)damage;
+            //target.GetComponent<NormalController>().health -= (int)damage;
             mm.AddMoney(10);
+            Debug.Log(target.name);
             //code for damage receiving and adding money
             if(target != null){
 
-                if (target.name.Equals("Normal"))
-                    target.transform.GetComponent<NormalController>().health -= 10;
+                if (target.name.Contains("Normal"))
+                    target.transform.GetComponent<NormalController>().health -= (int)damage;
                 else if (target.name.Equals("AndrewTate"))
-                    target.transform.GetComponent<AndrewTateController>().health -= 5;
+                    target.transform.GetComponent<AndrewTateController>().health -= (int)damage;
                 else if (target.name.Equals("Kanye"))
-                    target.transform.GetComponent<KanyeController>().health -= 5;
+                    target.transform.GetComponent<KanyeController>().health -= (int)damage;
                 else if (target.name.Equals("Sneako"))
-                    target.transform.GetComponent<SneakoController>().health -= 5;
+                    target.transform.GetComponent<SneakoController>().health -= (int)damage;
                 else if (target.name.Equals("TristanTate"))
-                    target.transform.GetComponent<TristanController>().health -= 5;
+                    target.transform.GetComponent<TristanController>().health -= (int)damage;
 
                 
 
