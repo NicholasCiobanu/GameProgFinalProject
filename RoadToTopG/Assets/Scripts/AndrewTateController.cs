@@ -43,7 +43,7 @@ public class AndrewTateController : MonoBehaviour
         playedHaramClip = false;
         playedBreatheAirClip = false;
         playedCantBanMeClip = false;
-        health = 100;
+        health = 2000;
         animator = GetComponent<Animator>();    
     }
 
@@ -60,12 +60,12 @@ public class AndrewTateController : MonoBehaviour
             NavMeshAgent.SetDestination(Player.position);
         }
         
-        if (health < 80 && !playedHaramClip)
+        if (health < 1000 && !playedHaramClip)
         {
             audioSource.PlayOneShot(haramClip);
             playedHaramClip = true;
         } 
-        if (health < 50 && !playedBreatheAirClip)
+        if (health < 500 && !playedBreatheAirClip)
         {
             audioSource.PlayOneShot(breatheAirClip);
             playedBreatheAirClip = true;

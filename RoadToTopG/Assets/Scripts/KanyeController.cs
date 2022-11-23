@@ -39,7 +39,7 @@ public class KanyeController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         playedIGuessWellNeverKnowClip = false;
         playedBushDoesntCareClip = false;
-        health = 100;
+        health = 1000;
         animator = GetComponent<Animator>();
     }
 
@@ -61,7 +61,7 @@ public class KanyeController : MonoBehaviour
             NavMeshAgent.SetDestination(Player.position);
         }
 
-        if (health < 80 && !playedBushDoesntCareClip)
+        if (health < 500 && !playedBushDoesntCareClip)
         {
             audioSource.PlayOneShot(bushDoesntCareClip);
             playedBushDoesntCareClip = true;

@@ -38822,6 +38822,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiObject: {fileID: 543463589}
   cost: 100
+  m4: {fileID: 1631925365}
+  pistol: {fileID: 448239315}
 --- !u!114 &1042618873
 MonoBehaviour:
   m_ObjectHideFlags: 0

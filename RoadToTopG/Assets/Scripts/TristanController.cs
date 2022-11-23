@@ -46,7 +46,7 @@ public class TristanController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         playedYouNeedTobeMoreMisogynisticClip = false;
         playedDontBeMisogynisticClip = false;
-        health = 100;
+        health = 1500;
         animator = GetComponent<Animator>();
     }
 
@@ -64,7 +64,7 @@ public class TristanController : MonoBehaviour
             NavMeshAgent.SetDestination(Player.position);
         }
 
-        if (health <= 80 && !playedYouNeedTobeMoreMisogynisticClip)
+        if (health <= 750 && !playedYouNeedTobeMoreMisogynisticClip)
         {
             audioSource.PlayOneShot(youNeedTobeMoreMisogynisticClip);
             playedYouNeedTobeMoreMisogynisticClip = true;
