@@ -30842,8 +30842,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backWhereYouStartedClip: {fileID: 8300000, guid: 5a99175a9f47bdb4a8aed1ba06581fa6, type: 3}
-  healthText: {fileID: 1852523105}
-  gameOverText: {fileID: 1939371231}
+  healthText: {fileID: 1852523107}
+  gameOverText: {fileID: 1939371232}
 --- !u!82 &864706796
 AudioSource:
   m_ObjectHideFlags: 0
@@ -68459,7 +68459,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 99
+  m_Text: 100 / 100
 --- !u!222 &1852523108
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -13,8 +13,8 @@ public class UIInterfaceController : MonoBehaviour
     private bool playedBackWhereYouStartedClip;
     private int playerMaxHealth = 100;
     private int playerHealth;
-    [SerializeField] private GameObject healthText;
-    [SerializeField] private GameObject gameOverText;
+    [SerializeField] private Text healthText;
+    [SerializeField] private Text gameOverText;
     //public Animator zombieAnimator;
     float nextTimeToAttack = 0f;
     private GameObject player;
@@ -30,7 +30,7 @@ public class UIInterfaceController : MonoBehaviour
     void Update()
     {
         playerHealth = player.GetComponent<HealthController>().health;
-        healthText.GetComponent<Text>().text = "Health: " + playerHealth + "/" + playerMaxHealth;
+        healthText.text = "Health: " + playerHealth + "/" + playerMaxHealth;
         if (playerHealth <= 0 && !playedBackWhereYouStartedClip)
         {
             StartCoroutine(RestartGame());
@@ -41,7 +41,7 @@ public class UIInterfaceController : MonoBehaviour
     {
         audioSource.PlayOneShot(backWhereYouStartedClip);
         playedBackWhereYouStartedClip = true;
-        gameOverText.GetComponent<Text>().enabled = true;
+        gameOverText.enabled = true;
         yield return new WaitForSeconds(4f);
         SceneManager.LoadScene(0);
     }
@@ -54,14 +54,16 @@ public class UIInterfaceController : MonoBehaviour
 
     public int getHealth()
     {
-        return playerHealth;
+        return player.GetComponent<HealthController>().health;
     }
 
     public void setHealth(int health)
     {
-        playerHealth = health;
-        healthText.GetComponent<Text>().text = "Health: " + playerHealth + "/" + playerMaxHealth;
+        player.GetComponent<HealthController>().health = (health > playerMaxHealth) ? playerMaxHealth : health;
+        healthText.text = "Health: " + player.GetComponent<HealthController>().health + " / " + playerMaxHealth;
+        Debug.Log(healthText.text);
     }
+
 
     public int getMaxHealth()
     {
@@ -70,7 +72,9 @@ public class UIInterfaceController : MonoBehaviour
 
     public void setMaxHealth(int health)
     {
+        int diff = health - playerMaxHealth;
         playerMaxHealth = health;
-        healthText.GetComponent<Text>().text = "Health: " + playerHealth + "/" + playerMaxHealth;
+        player.GetComponent<HealthController>().health += diff;
+        healthText.text = "Health: " + player.GetComponent<HealthController>().health + "/" + playerMaxHealth;
     }
 }

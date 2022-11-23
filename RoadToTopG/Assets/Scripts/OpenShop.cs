@@ -20,13 +20,13 @@ public class OpenShop : MonoBehaviour
         uiObject.SetActive(false);
         box = this.transform.parent.GetComponent<Animator>();
         box.enabled = false;
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerStay(Collider other)
@@ -35,21 +35,21 @@ public class OpenShop : MonoBehaviour
         {
             box.enabled = true;
             box.Play("openBox");
-            if (!flag) { 
-                uiObject.SetActive(true); 
-                flag = true; 
+            if (!flag)
+            {
+                uiObject.SetActive(true);
+                flag = true;
             }
-            
+
             if (Input.GetKeyDown(KeyCode.B) && mm.getMoney() >= cost && ic.getHealth() < ic.getMaxHealth())
             {
                 mm.RemoveMoney(cost);
                 uiObject.SetActive(false);
-                //ic.setHealth(ic.getHealth() + 20);
-                Coroutine health = StartCoroutine(AddHealth(.1f));
-
+                ic.setHealth(ic.getHealth() + 20);
+                
             }
         }
-        
+
     }
     private void OnTriggerExit(Collider other)
     {
@@ -58,26 +58,4 @@ public class OpenShop : MonoBehaviour
         box.Play("closeBox");
     }
 
-    private IEnumerator AddHealth(float time)
-    {
-        int x;
-        if (ic.getMaxHealth() - ic.getHealth() < 20)
-        {
-             x = ic.getMaxHealth() - ic.getHealth();
-        } else
-        {
-             x = 20;
-        }
-        for (int i = 0; i < x; i++)
-        {
-            if (ic.getHealth() == ic.getMaxHealth())
-            {
-                break;
-            }
-            ic.setHealth(ic.getHealth() + 1);
-            yield return new WaitForSeconds(time);
-        }
-        StopCoroutine(AddHealth(.1f));
-
-    }
 }
