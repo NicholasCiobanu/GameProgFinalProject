@@ -14,6 +14,7 @@ public class UIInterfaceController : MonoBehaviour
     private int playerMaxHealth = 100;
     private int playerHealth;
     [SerializeField] private GameObject healthText;
+    [SerializeField] private GameObject gameOverText;
     //public Animator zombieAnimator;
     float nextTimeToAttack = 0f;
     private GameObject player;
@@ -32,15 +33,22 @@ public class UIInterfaceController : MonoBehaviour
         healthText.GetComponent<Text>().text = "Health: " + playerHealth + "/" + playerMaxHealth;
         if (playerHealth <= 0 && !playedBackWhereYouStartedClip)
         {
-            audioSource.PlayOneShot(backWhereYouStartedClip);
-            playedBackWhereYouStartedClip = true;
-            // SceneManager.LoadScene("AbuTateScene");
+            StartCoroutine(RestartGame());
         }
     }
 
-    public IEnumerator Damage() {
+    IEnumerator RestartGame()
+    {
+        audioSource.PlayOneShot(backWhereYouStartedClip);
+        playedBackWhereYouStartedClip = true;
+        gameOverText.GetComponent<Text>().enabled = true;
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene(0);
+    }
+
+    public IEnumerator Damage()
+    {
         yield return new WaitForSeconds(1f);
-        Debug.Log("Damage");
         playerHealth -= 5;
     }
 
