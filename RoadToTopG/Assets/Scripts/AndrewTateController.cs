@@ -23,10 +23,7 @@ public class AndrewTateController : MonoBehaviour
     public int health;
     Animator animator;
 
-    
-
-    [SerializeField]
-    private NavMeshAgent NavMeshAgent;
+    public float speed = 0.2f;
 
     [SerializeField]
     private Transform Player;
@@ -50,14 +47,11 @@ public class AndrewTateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         
         if (health < 0)
         {
             animator.SetBool("isDead", true);
-        }
-        else {
-            NavMeshAgent.SetDestination(Player.position);
         }
         
         if (health < 1000 && !playedHaramClip)
@@ -75,6 +69,11 @@ public class AndrewTateController : MonoBehaviour
             audioSource.PlayOneShot(cantBanMeClip);
             playedCantBanMeClip = true;
         } 
+        else
+        {
+            transform.LookAt(Player.gameObject.transform);
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        }
         
 
 
