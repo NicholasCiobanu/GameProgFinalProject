@@ -46,7 +46,7 @@ public class SneakoController : MonoBehaviour
         playedComeBackToRealityClip = false;
         playedGetOffTheTiktokClip = false;
         playedYouAreSoStupidClip = false;
-        health = 100;
+        health = 1200;
         animator = GetComponent<Animator>();
     }
 
@@ -64,12 +64,12 @@ public class SneakoController : MonoBehaviour
             NavMeshAgent.SetDestination(Player.position);
         }
 
-        if (health <= 80 && !playedComeBackToRealityClip)
+        if (health <= 800 && !playedComeBackToRealityClip)
         {
             audioSource.PlayOneShot(comeBackToRealityClip);
             playedComeBackToRealityClip = true;
         }
-        if (health <= 50 && !playedGetOffTheTiktokClip)
+        if (health <= 400 && !playedGetOffTheTiktokClip)
         {
             audioSource.PlayOneShot(getOffTheTiktokClip);
             playedGetOffTheTiktokClip = true;
