@@ -14690,6 +14690,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 475818, guid: 71dc3bb02905149459f46290699b104f, type: 3}
   m_PrefabInstance: {fileID: 347114857}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &350955063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 350955064}
+  - component: {fileID: 350955066}
+  - component: {fileID: 350955065}
+  m_Layer: 5
+  m_Name: GameOver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &350955064
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350955063}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1424840411}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000015259, y: -0.000011444}
+  m_SizeDelta: {x: 336.5834, y: 45.5642}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &350955065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350955063}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.059594885, b: 0.0141509175, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 33
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 6
+    m_MaxSize: 64
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Game Over Wagie
+--- !u!222 &350955066
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350955063}
+  m_CullTransparentMesh: 1
 --- !u!1001 &352357023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44194,7 +44273,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 153.39923, y: -55.11212}
+  m_AnchoredPosition: {x: 153.39917, y: -55.11206}
   m_SizeDelta: {x: 90.59839, y: 44.498108}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1062575077
@@ -56995,6 +57074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backWhereYouStartedClip: {fileID: 8300000, guid: 5a99175a9f47bdb4a8aed1ba06581fa6, type: 3}
   healthText: {fileID: 1061684276}
+  gameOverText: {fileID: 350955063}
 --- !u!114 &1424840408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57073,6 +57153,7 @@ RectTransform:
   - {fileID: 1061684279}
   - {fileID: 153065961}
   - {fileID: 1261790644}
+  - {fileID: 350955064}
   m_Father: {fileID: 0}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
