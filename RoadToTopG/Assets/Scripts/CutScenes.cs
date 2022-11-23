@@ -15,7 +15,12 @@ public class CutScenes : MonoBehaviour
     [SerializeField] private GameObject crosshair;
     [SerializeField] private GameObject crosshair1;
     [SerializeField] private GameObject healthText;
-
+    [SerializeField] private GameObject healtPic;
+    [SerializeField] private GameObject money;
+    [SerializeField] private GameObject magazine;
+    [SerializeField] private GameObject remainingMag;
+    [SerializeField] private GameObject diagonalAmmo;
+    [SerializeField] private GameObject m4Silhouette;
     void Start()
     {
         StartCoroutine(TheSequence());
@@ -35,5 +40,11 @@ public class CutScenes : MonoBehaviour
         crosshair.SetActive(true);
         crosshair1.SetActive(true);
         healthText.SetActive(true);
+        healtPic.SetActive(true);
+        money.SetActive(true);
+        magazine.SetActive(true);
+        remainingMag.SetActive(true);
+        diagonalAmmo.SetActive(true);
+        m4Silhouette.SetActive(true);
     }
 }
