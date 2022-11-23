@@ -11,12 +11,13 @@ public class AmmoShop : MonoBehaviour
     [SerializeField]
     private int cost;
     private MoneyManager mm;
-    private Weapon weapon;
+    
+    [SerializeField] Weapon m4;
+    [SerializeField] Weapon pistol;
     // Start is called before the first frame update
     void Start()
     {
         mm = FindObjectOfType<MoneyManager>();
-        weapon = FindObjectOfType<Weapon>();
         uiObject.SetActive(false);
         box = this.transform.parent.GetComponent<Animator>();
         box.enabled = false;
@@ -45,8 +46,8 @@ public class AmmoShop : MonoBehaviour
             {
                 mm.RemoveMoney(cost);
                 uiObject.SetActive(false);
-                weapon.maxAmmo += 20;
-
+                m4.maxAmmo += 16;
+                pistol.maxAmmo += 30;
             }
         }
 
