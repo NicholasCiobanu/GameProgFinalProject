@@ -22,13 +22,13 @@ public class AttackState : StateMachineBehaviour
     {
         distance = Vector3.Distance(player.transform.position, zombie.transform.position);
 
-        if (distance > 1 )
+        if (distance > 2 )
         {
             animator.SetBool("isInRange", false);
         }
         else if (Time.time >= nextTimeToAttack)
         {
-            nextTimeToAttack = Time.time + 1f;
+            nextTimeToAttack = Time.time + 0.5f;
             player.GetComponent<HealthController>().health -= 10;
         }
         /*
