@@ -57,11 +57,16 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
+        
+        GameObject.Find("CurrentMag").GetComponent<UnityEngine.UI.Text>().text = currentAmmo.ToString();
+        GameObject.Find("RemainMag").GetComponent<UnityEngine.UI.Text>().text = maxAmmo.ToString();
         if (isReloading)
             return;
 
         if (currentAmmo == 0  && maxAmmo >= 0|| Input.GetKey(KeyCode.R) && currentAmmo != magSize)
         {
+            if (maxAmmo <= 0)
+                return;
             StartCoroutine(Reload());
             return;
         }
@@ -70,8 +75,6 @@ public class Weapon : MonoBehaviour
             nextTimeToFire = Time.time + (1f/fireRate);
             Shoot();
         }
-        GameObject.Find("CurrentMag").GetComponent<UnityEngine.UI.Text>().text = currentAmmo.ToString();
-        GameObject.Find("RemainMag").GetComponent<UnityEngine.UI.Text>().text = maxAmmo.ToString();
     }
 
     //will get called every time user shoots
@@ -135,6 +138,8 @@ public class Weapon : MonoBehaviour
                 int ammoAdded = magSize - currentAmmo;
                 currentAmmo += ammoAdded;
                 maxAmmo -= ammoAdded;
+                if (maxAmmo<0)
+                    maxAmmo = 0;
                 animator.SetBool("Reloading",false); 
                 isReloading = false;
         }
