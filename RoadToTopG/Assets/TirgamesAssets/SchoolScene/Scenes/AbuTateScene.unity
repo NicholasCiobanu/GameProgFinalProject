@@ -4679,7 +4679,7 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -5621,6 +5621,14 @@ PrefabInstance:
     - target: {fileID: 354276529335945048, guid: 281e9638e2d94064cbbd13d153b93e53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2165634953516740098, guid: 281e9638e2d94064cbbd13d153b93e53, type: 3}
+      propertyPath: damage
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2165634953516740098, guid: 281e9638e2d94064cbbd13d153b93e53, type: 3}
+      propertyPath: magSize
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 2165634953516740098, guid: 281e9638e2d94064cbbd13d153b93e53, type: 3}
       propertyPath: bulletTrail
@@ -6928,7 +6936,7 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -9649,7 +9657,7 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -43533,7 +43541,7 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -46005,6 +46013,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1157669327 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2165634954472082596, guid: 281e9638e2d94064cbbd13d153b93e53, type: 3}
+  m_PrefabInstance: {fileID: 109074911}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8deefa483abd7e44bacea79a2b587414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1158081672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52142,6 +52161,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1339209848 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2165634953516740098, guid: 281e9638e2d94064cbbd13d153b93e53, type: 3}
+  m_PrefabInstance: {fileID: 109074911}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8deefa483abd7e44bacea79a2b587414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1339728327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54712,8 +54742,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiObject: {fileID: 409736046}
   cost: 100
-  m4: {fileID: 0}
-  pistol: {fileID: 0}
+  m4: {fileID: 1339209848}
+  pistol: {fileID: 1157669327}
 --- !u!114 &1407479231
 MonoBehaviour:
   m_ObjectHideFlags: 0
