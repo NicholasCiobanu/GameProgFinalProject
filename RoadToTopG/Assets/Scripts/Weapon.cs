@@ -117,9 +117,9 @@ public class Weapon : MonoBehaviour
                     target.transform.GetComponent<SneakoController>().health -= (int)damage; mm.AddMoney(25); 
                 }
                 else if (target.name.Equals("TristanTate"))
-                { 
-                    target.transform.GetComponent<TristanController>().health -= (int)damage; mm.AddMoney(25);
-                }
+                    target.transform.GetComponent<TristanController>().health -= (int)damage;
+                else if (target.name.Contains("Karen"))
+                    target.transform.GetComponent<KarenController>().ReduceHealth((int) damage);
 
 
 

@@ -4663,12 +4663,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 85356383}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fed9f7b934472f34584c4e7ebafff8c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 02148c18142cb964fa4ac4abed05f2df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 100
+  UIController: {fileID: 116107844}
   NavMeshAgent: {fileID: 85356385}
-  healthText: {fileID: 1113401103}
+  Player: {fileID: 1113401104}
+  healthText: {fileID: 0}
 --- !u!195 &85356385
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4679,7 +4681,7 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 5.65
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -4691,6 +4693,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &85356388
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85356383}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 4.25
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &85600073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5624,7 +5640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2165634953516740098, guid: 281e9638e2d94064cbbd13d153b93e53, type: 3}
       propertyPath: damage
-      value: 12
+      value: 102.12
       objectReference: {fileID: 0}
     - target: {fileID: 2165634953516740098, guid: 281e9638e2d94064cbbd13d153b93e53, type: 3}
       propertyPath: magSize
@@ -5864,6 +5880,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e7b07bcbaa02c243b63874e52ff936f, type: 3}
+--- !u!114 &116107844 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3920435248331812218, guid: 4d40ee7d9191e3e4e82fd6a3d1c4eca5, type: 3}
+  m_PrefabInstance: {fileID: 1577613799}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98051dbf7c1761440bf6c109bf3a3cf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &116802304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6936,7 +6963,7 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 5.65
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -6957,12 +6984,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 151573231}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fed9f7b934472f34584c4e7ebafff8c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 02148c18142cb964fa4ac4abed05f2df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 100
+  UIController: {fileID: 116107844}
   NavMeshAgent: {fileID: 151573232}
-  healthText: {fileID: 1113401103}
+  Player: {fileID: 1113401104}
+  healthText: {fileID: 0}
+--- !u!136 &151573236
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151573231}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 4.25
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &151803213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9641,12 +9684,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 238862335}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fed9f7b934472f34584c4e7ebafff8c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 02148c18142cb964fa4ac4abed05f2df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 100
+  UIController: {fileID: 116107844}
   NavMeshAgent: {fileID: 238862337}
-  healthText: {fileID: 1113401103}
+  Player: {fileID: 1113401104}
+  healthText: {fileID: 0}
 --- !u!195 &238862337
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -9657,7 +9702,7 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 5.65
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -9669,6 +9714,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &238862340
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238862335}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 4.25
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &241579837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43525,13 +43584,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1079591231}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fed9f7b934472f34584c4e7ebafff8c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 02148c18142cb964fa4ac4abed05f2df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  NavMeshAgent: {fileID: 1079591233}
+  health: 100
+  UIController: {fileID: 116107844}
+  NavMeshAgent: {fileID: 1079591235}
+  Player: {fileID: 1113401104}
   healthText: {fileID: 1113401103}
---- !u!195 &1079591233
+--- !u!195 &1079591235
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43541,7 +43602,7 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 5.65
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -43553,6 +43614,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &1079591236
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079591231}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 4.25
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1082796294
 PrefabInstance:
   m_ObjectHideFlags: 0
