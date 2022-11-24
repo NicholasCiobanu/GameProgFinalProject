@@ -41,9 +41,9 @@ public class Weapon : MonoBehaviour
     private TrailRenderer bulletTrail;
 
 
-   
 
-    void Start () 
+
+    void Start()
     {
         currentAmmo = magSize;
         mm = FindObjectOfType<MoneyManager>();
@@ -51,19 +51,19 @@ public class Weapon : MonoBehaviour
 
     void OnEnable()
     {
-        animator.SetBool("Reloading",false);
+        animator.SetBool("Reloading", false);
         isReloading = false;
     }
 
     void Update()
     {
-        
+
         GameObject.Find("CurrentMag").GetComponent<UnityEngine.UI.Text>().text = currentAmmo.ToString();
         GameObject.Find("RemainMag").GetComponent<UnityEngine.UI.Text>().text = maxAmmo.ToString();
         if (isReloading)
             return;
 
-        if (currentAmmo == 0  && maxAmmo >= 0|| Input.GetKey(KeyCode.R) && currentAmmo != magSize)
+        if (currentAmmo == 0 && maxAmmo >= 0 || Input.GetKey(KeyCode.R) && currentAmmo != magSize)
         {
             if (maxAmmo <= 0)
                 return;
@@ -71,14 +71,16 @@ public class Weapon : MonoBehaviour
             return;
         }
 
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire){
-            nextTimeToFire = Time.time + (1f/fireRate);
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+        {
+            nextTimeToFire = Time.time + (1f / fireRate);
             Shoot();
         }
     }
 
     //will get called every time user shoots
-    void Shoot(){
+    void Shoot()
+    {
         if (currentAmmo <= 0)
             return;
         currentAmmo--;
@@ -86,15 +88,17 @@ public class Weapon : MonoBehaviour
         RaycastHit hit;
         audioSource.PlayOneShot(shotSound);
         //if the raycast hits something
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, (int)range,  1 << LayerMask.NameToLayer("Default"), QueryTriggerInteraction.Collide)){
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, (int)range, 1 << LayerMask.NameToLayer("Default"), QueryTriggerInteraction.Collide))
+        {
             GameObject target = hit.transform.gameObject;
-            TrailRenderer trail = Instantiate(bulletTrail,new Vector3(transform.position.x,transform.position.y + 0.15f,transform.position.z), Quaternion.identity);
-            StartCoroutine(SpawnTrail(trail,hit));
+            TrailRenderer trail = Instantiate(bulletTrail, new Vector3(transform.position.x, transform.position.y + 0.15f, transform.position.z), Quaternion.identity);
+            StartCoroutine(SpawnTrail(trail, hit));
             //target.GetComponent<NormalController>().health -= (int)damage;
             mm.AddMoney(10);
             Debug.Log(target.name);
             //code for damage receiving and adding money
-            if(target != null){
+            if (target != null)
+            {
 
                 if (target.name.Contains("Normal"))
                     target.transform.GetComponent<NormalController>().health -= (int)damage;
@@ -106,31 +110,37 @@ public class Weapon : MonoBehaviour
                     target.transform.GetComponent<SneakoController>().health -= (int)damage;
                 else if (target.name.Equals("TristanTate"))
                     target.transform.GetComponent<TristanController>().health -= (int)damage;
+                else if (target.name.Contains("Karen"))
+                    target.transform.GetComponent<KarenController>().ReduceHealth((int) damage);
 
-                
 
-            } 
+
+            }
         }
     }
 
-    
+
 
     IEnumerator Reload()
     {
-        if (maxAmmo <= 0 && currentAmmo <= 0){   
+        if (maxAmmo <= 0 && currentAmmo <= 0)
+        {
             isReloading = true;
-            animator.SetBool("Reloading",true);
+            animator.SetBool("Reloading", true);
             yield return new WaitForSeconds(0f);
         }
-        else if (maxAmmo <= 0){
-            animator.SetBool("Reloading",true);
+        else if (maxAmmo <= 0)
+        {
+            animator.SetBool("Reloading", true);
             yield return new WaitForSeconds(0f);
         }
-        else {
-        isReloading = true;
-        animator.SetBool("Reloading",true);
-        yield return new WaitForSeconds(.25f);
-            if (maxAmmo > 0){
+        else
+        {
+            isReloading = true;
+            animator.SetBool("Reloading", true);
+            yield return new WaitForSeconds(.25f);
+            if (maxAmmo > 0)
+            {
                 if (maxAmmo <= 0)
                     maxAmmo = 0;
                 audioSource.PlayOneShot(reloadSound);
@@ -138,19 +148,21 @@ public class Weapon : MonoBehaviour
                 int ammoAdded = magSize - currentAmmo;
                 currentAmmo += ammoAdded;
                 maxAmmo -= ammoAdded;
-                if (maxAmmo<0)
+                if (maxAmmo < 0)
                     maxAmmo = 0;
-                animator.SetBool("Reloading",false); 
+                animator.SetBool("Reloading", false);
                 isReloading = false;
-        }
+            }
         }
     }
 
-    IEnumerator SpawnTrail(TrailRenderer trail, RaycastHit hit){
+    IEnumerator SpawnTrail(TrailRenderer trail, RaycastHit hit)
+    {
         float time = 0;
         Vector3 startPosition = trail.transform.position;
 
-        while (time < 1) {
+        while (time < 1)
+        {
             trail.transform.position = Vector3.Lerp(startPosition, hit.point, time);
             time += Time.deltaTime / trail.time;
             yield return null;
