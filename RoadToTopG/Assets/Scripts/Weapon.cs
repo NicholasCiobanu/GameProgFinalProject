@@ -94,21 +94,28 @@ public class Weapon : MonoBehaviour
             TrailRenderer trail = Instantiate(bulletTrail, new Vector3(transform.position.x, transform.position.y + 0.15f, transform.position.z), Quaternion.identity);
             StartCoroutine(SpawnTrail(trail, hit));
             //target.GetComponent<NormalController>().health -= (int)damage;
-            Debug.Log(target.name);
+
+            Debug.Log(hit.transform.name + "::" + hit.collider.isTrigger);
             //code for damage receiving and adding money
             if (target != null)
             {
 
-                if (target.name.Contains("Normal")) {
-                    target.transform.GetComponent<NormalController>().health -= (int)damage;
-                    mm.AddMoney(25);
+                if (target.name.Contains("Normal"))
+                { 
+                    target.transform.GetComponent<NormalController>().health -= (int)damage; mm.AddMoney(25); 
                 }
                 else if (target.name.Equals("AndrewTate"))
-                    target.transform.GetComponent<AndrewTateController>().health -= (int)damage;
+                { 
+                    target.transform.GetComponent<AndrewTateController>().health -= (int)damage; mm.AddMoney(25); 
+                }
                 else if (target.name.Equals("Kanye"))
-                    target.transform.GetComponent<KanyeController>().health -= (int)damage;
+                { 
+                    target.transform.GetComponent<KanyeController>().health -= (int)damage; mm.AddMoney(25); 
+                }
                 else if (target.name.Equals("Sneako"))
-                    target.transform.GetComponent<SneakoController>().health -= (int)damage;
+                { 
+                    target.transform.GetComponent<SneakoController>().health -= (int)damage; mm.AddMoney(25); 
+                }
                 else if (target.name.Equals("TristanTate"))
                     target.transform.GetComponent<TristanController>().health -= (int)damage;
                 else if (target.name.Contains("Karen"))

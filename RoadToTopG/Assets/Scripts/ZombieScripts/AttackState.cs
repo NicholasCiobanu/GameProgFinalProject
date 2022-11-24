@@ -29,7 +29,7 @@ public class AttackState : StateMachineBehaviour
         else if (Time.time >= nextTimeToAttack)
         {
             nextTimeToAttack = Time.time + 0.5f;
-            player.GetComponent<HealthController>().health -= 10;
+            player.GetComponent<HealthController>().health -= 5;
         }
         /*
          *  if (zombieAnimator.GetBool("isInRange") && Time.time >= nextTimeToAttack)
