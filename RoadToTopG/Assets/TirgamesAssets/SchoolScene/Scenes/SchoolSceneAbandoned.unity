@@ -14740,8 +14740,8 @@ MonoBehaviour:
   damage: 10
   range: 100
   fireRate: 3
-  magSize: 5
-  maxAmmo: 10
+  magSize: 10
+  maxAmmo: 50
   reloadTime: 1
   isReloading: 0
   animator: {fileID: 1540164233}
@@ -60417,8 +60417,8 @@ MonoBehaviour:
   damage: 10
   range: 100
   fireRate: 5
-  magSize: 5
-  maxAmmo: 45
+  magSize: 32
+  maxAmmo: 120
   reloadTime: 1
   isReloading: 0
   animator: {fileID: 1540164233}
