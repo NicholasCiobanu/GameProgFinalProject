@@ -13,7 +13,7 @@ public class MoneyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentMoney = 9999;
+        currentMoney = 0;
         moneyText.text = "Money: " + currentMoney;
         
     }
