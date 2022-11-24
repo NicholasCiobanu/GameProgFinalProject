@@ -13,10 +13,10 @@ public class NormalController : MonoBehaviour
 
     
 
-    [SerializeField]
-    private NavMeshAgent NavMeshAgent;
+    //[SerializeField]
+    //private NavMeshAgent NavMeshAgent;
+    [SerializeField] float speed = 1.5f;
 
-    
     private Transform Player;
     
 
@@ -42,8 +42,9 @@ public class NormalController : MonoBehaviour
         
             animator.SetBool("isDead", true);
         } else {
-            NavMeshAgent.SetDestination(Player.position);
-            
+            //NavMeshAgent.SetDestination(Player.position);
+            transform.LookAt(Player.gameObject.transform);
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
 
 
