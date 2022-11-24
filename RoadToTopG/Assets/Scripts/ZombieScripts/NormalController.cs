@@ -45,7 +45,7 @@ public class NormalController : MonoBehaviour
         else
         {
             NavMeshAgent.SetDestination(Player.position);
-            transform.LookAt(Player.gameObject.transform);
+            //transform.LookAt(Player.gameObject.transform);
             //     transform.LookAt(Player.gameObject.transform);
             //     transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
