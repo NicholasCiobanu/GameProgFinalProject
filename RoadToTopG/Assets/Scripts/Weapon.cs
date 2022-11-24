@@ -94,14 +94,15 @@ public class Weapon : MonoBehaviour
             TrailRenderer trail = Instantiate(bulletTrail, new Vector3(transform.position.x, transform.position.y + 0.15f, transform.position.z), Quaternion.identity);
             StartCoroutine(SpawnTrail(trail, hit));
             //target.GetComponent<NormalController>().health -= (int)damage;
-            mm.AddMoney(10);
             Debug.Log(target.name);
             //code for damage receiving and adding money
             if (target != null)
             {
 
-                if (target.name.Contains("Normal"))
+                if (target.name.Contains("Normal")) {
                     target.transform.GetComponent<NormalController>().health -= (int)damage;
+                    mm.AddMoney(25);
+                }
                 else if (target.name.Equals("AndrewTate"))
                     target.transform.GetComponent<AndrewTateController>().health -= (int)damage;
                 else if (target.name.Equals("Kanye"))
