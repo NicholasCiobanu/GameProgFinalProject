@@ -62,7 +62,7 @@ public class AndrewTateController : MonoBehaviour
         if (health < 500 && !playedBreatheAirClip)
         {
             audioSource.PlayOneShot(breatheAirClip);
-            Player.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * 200f);
+            //Player.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * 200f);
             playedBreatheAirClip = true;
         } 
         if (health <= 0 && !playedCantBanMeClip)
