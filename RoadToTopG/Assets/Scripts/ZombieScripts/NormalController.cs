@@ -11,14 +11,14 @@ public class NormalController : MonoBehaviour
     public int health;
     Animator animator;
 
-    
 
-    //[SerializeField]
-    //private NavMeshAgent NavMeshAgent;
-    [SerializeField] float speed = 1.5f;
+
+    [SerializeField]
+    private NavMeshAgent NavMeshAgent;
+    //[SerializeField] float speed = 1.5f;
 
     private Transform Player;
-    
+
 
     //  Interface
     [SerializeField]
@@ -29,29 +29,27 @@ public class NormalController : MonoBehaviour
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         health = 100;
-        animator = GetComponent<Animator>();    
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        
+
+
         if (health < 0)
         {
-        
+
             animator.SetBool("isDead", true);
-        } else {
-            //NavMeshAgent.SetDestination(Player.position);
+        }
+        else
+        {
+            NavMeshAgent.SetDestination(Player.position);
             transform.LookAt(Player.gameObject.transform);
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            //     transform.LookAt(Player.gameObject.transform);
+            //     transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
 
 
     }
-
-    
-        
-    
-    
 }
