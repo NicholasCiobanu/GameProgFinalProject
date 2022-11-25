@@ -1880,7 +1880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  NavMeshAgent: {fileID: 1502382197}
+  agent: {fileID: 1502382197}
   healthText: {fileID: 0}
 --- !u!195 &1502382197
 NavMeshAgent:
@@ -1895,8 +1895,8 @@ NavMeshAgent:
   m_Speed: 0.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 180
-  m_StoppingDistance: 0
+  m_AngularSpeed: 120
+  m_StoppingDistance: 5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

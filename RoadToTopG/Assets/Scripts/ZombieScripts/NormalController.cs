@@ -13,7 +13,7 @@ public class NormalController : MonoBehaviour
 
 
     [SerializeField]
-    private NavMeshAgent NavMeshAgent;
+    private NavMeshAgent agent = null;
 
     private Transform Player;
 
@@ -25,6 +25,7 @@ public class NormalController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetReference();
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         health = 100;
         animator = GetComponent<Animator>();
@@ -33,16 +34,43 @@ public class NormalController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MoveToTarget();
+    }
 
-
+    private void MoveToTarget()
+    {
+        if (health != 0)
+        {
+            agent.SetDestination(Player.position);
+            float distanceToTarget = Vector3.Distance(transform.position, Player.position);
+            if(distanceToTarget <= agent.stoppingDistance)
+            {
+            RotateToTarget();
+            }
+            if (distanceToTarget <= 10 && distanceToTarget >= 5)
+            {
+                Vector3 direction = Player.position - transform.position;
+                Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
+                transform.rotation = rotation;
+            }
+        }
         if (health < 0)
         {
-
             animator.SetBool("isDead", true);
-        } else {
-            NavMeshAgent.SetDestination(Player.position);
         }
-
-
     }
+
+    private void RotateToTarget()
+    {
+        transform.LookAt(Player);
+    }
+
+
+
+    private void GetReference()
+    {
+        agent = GetComponent<NavMeshAgent>();
+    }
+
+
 }
