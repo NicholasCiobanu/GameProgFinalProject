@@ -25849,7 +25849,7 @@ MonoBehaviour:
   health: 1000
   sneako: {fileID: 1160416921}
   sneakoController: {fileID: 1519082167}
-  Player: {fileID: 1113401103}
+  Player: {fileID: 1113401104}
   speed: 0.2
   healthText: {fileID: 0}
 --- !u!82 &661555694
@@ -60085,7 +60085,7 @@ MonoBehaviour:
   youAreSoStupidClip: {fileID: 8300000, guid: 87956d495d8bb45429f695fe8d377263, type: 3}
   health: 1200
   speed: 0.2
-  Player: {fileID: 1113401103}
+  Player: {fileID: 1113401104}
   tristanTate: {fileID: 521093846}
   tristanController: {fileID: 1173714818}
   healthText: {fileID: 0}
