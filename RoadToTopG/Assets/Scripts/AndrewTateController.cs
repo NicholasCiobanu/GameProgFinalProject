@@ -72,8 +72,9 @@ public class AndrewTateController : MonoBehaviour
         } 
         else
         {
-            transform.LookAt(Player.gameObject.transform);
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            Vector3 direction = Player.position - transform.position;
+            Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
+            transform.rotation = rotation;
         }
         
 

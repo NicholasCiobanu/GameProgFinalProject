@@ -26,7 +26,7 @@ public class KanyeController : MonoBehaviour
     //private NavMeshAgent NavMeshAgent;
 
     [SerializeField]
-    private GameObject Player;
+    private Transform Player;
 
     public float speed = 0.2f;
 
@@ -59,14 +59,16 @@ public class KanyeController : MonoBehaviour
         }
         else
         {
-            transform.LookAt(Player.gameObject.transform);
-            transform.Translate(speed * Time.deltaTime * Vector3.forward);
+            Vector3 direction = Player.position - transform.position;
+            Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
+            transform.rotation = rotation;
         }
         
         if (health < 500 && !playedBushDoesntCareClip)
         {
             audioSource.PlayOneShot(bushDoesntCareClip);
             playedBushDoesntCareClip = true;
+            Player.Rotate(0f, 10f * Time.deltaTime, 0f, Space.Self);
         }
     }
 }

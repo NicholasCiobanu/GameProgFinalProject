@@ -26,7 +26,7 @@ public class SneakoController : MonoBehaviour
     public float speed = 0.2f;
 
     [SerializeField]
-    private GameObject Player;
+    private Transform Player;
 
     [SerializeField] private Animator tristanTate = null;
     [SerializeField] private TristanController tristanController;
@@ -58,8 +58,9 @@ public class SneakoController : MonoBehaviour
         }
         else
         {
-            transform.LookAt(Player.gameObject.transform);
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            Vector3 direction = Player.position - transform.position;
+            Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
+            transform.rotation = rotation;
         }
 
         if (health <= 800 && !playedComeBackToRealityClip)
