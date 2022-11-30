@@ -21,7 +21,7 @@ public class FootstepsController : MonoBehaviour
         {
             if (!isplaying)
             {
-                Debug.Log("playing");
+                //Debug.Log("playing");
                 audioData.Play(0);
                 isplaying = true;
             } 
@@ -30,7 +30,7 @@ public class FootstepsController : MonoBehaviour
         {
             if (isplaying)
             {
-                Debug.Log("Stopping");
+                //Debug.Log("Stopping");
                 isplaying = false;
                 audioData.Pause();
             }

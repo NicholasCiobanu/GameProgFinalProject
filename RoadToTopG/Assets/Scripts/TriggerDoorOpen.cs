@@ -17,37 +17,53 @@ public class TriggerDoorOpen : MonoBehaviour
     private MoneyManager mm;
     private RoundManager rm;
 
- public GameObject uiObject;
+    public GameObject uiObject;
 
-    void Start() {
+    void Start()
+    {
         uiObject.SetActive(false);
         mm = FindObjectOfType<MoneyManager>();
         rm = FindObjectOfType<RoundManager>();
+
     }
 
-    private void OnTriggerStay(Collider player) {
-        if(player.CompareTag("Player")) {
+    private void OnTriggerStay(Collider player)
+    {
+        if (player.CompareTag("Player"))
+        {
             uiObject.SetActive(true);
             StartCoroutine("WaitForSec");
-            if(Input.GetKey("f") && mm.getMoney() >= cost) {
+            if (Input.GetKey("f") && mm.getMoney() >= cost)
+            {
                 Destroy(uiObject);
                 mm.RemoveMoney(cost);
-                if (openTrigger) {
-                        myDoor.Play(firstDoorOpen, 0, 0.0f);
-                        secondDoor.Play(secondDoorOpen, 0, 0.0f);
-                        doorOpenAudioSource.Play();
-                        gameObject.SetActive(false);
+                GameObject[] innerSpawners = GameObject.FindGameObjectsWithTag("innerSpawner");
+                Debug.Log(innerSpawners.Length);
+                foreach (GameObject spawner in innerSpawners)
+                {
+                    Debug.Log(spawner.name);
+                    spawner.SetActive(true);
+                }
+                if (openTrigger)
+                {
+                    myDoor.Play(firstDoorOpen, 0, 0.0f);
+                    secondDoor.Play(secondDoorOpen, 0, 0.0f);
+                    doorOpenAudioSource.Play();
+                    gameObject.SetActive(false);
+                    
                 }
             }
         }
     }
 
-    private void OnTriggerExit(Collider other) {
-            uiObject.SetActive(false);
+    private void OnTriggerExit(Collider other)
+    {
+        uiObject.SetActive(false);
     }
 
 
-    IEnumerator WaitForSec() {
+    IEnumerator WaitForSec()
+    {
         yield return new WaitForSeconds(20);
- }
+    }
 }

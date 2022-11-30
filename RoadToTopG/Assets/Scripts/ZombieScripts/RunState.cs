@@ -23,7 +23,7 @@ public class RunState : StateMachineBehaviour
     {
         distance = Vector3.Distance(player.transform.position, zombie.transform.position);
         
-        if(distance < 2)
+        if(distance < 1)
         {
             animator.SetBool("isInRange", true);
             

@@ -13039,8 +13039,8 @@ GameObject:
   - component: {fileID: 394874466}
   - component: {fileID: 394874465}
   m_Layer: 0
-  m_Name: SpawnPoint (2)
-  m_TagString: Untagged
+  m_Name: SpawnPoint3
+  m_TagString: innerSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34279,8 +34279,8 @@ GameObject:
   - component: {fileID: 950821526}
   - component: {fileID: 950821525}
   m_Layer: 0
-  m_Name: SpawnPoint (1)
-  m_TagString: Untagged
+  m_Name: SpawnPoint2
+  m_TagString: innerSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

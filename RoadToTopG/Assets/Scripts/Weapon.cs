@@ -95,7 +95,7 @@ public class Weapon : MonoBehaviour
             StartCoroutine(SpawnTrail(trail, hit));
             //target.GetComponent<NormalController>().health -= (int)damage;
 
-            Debug.Log(hit.transform.name + "::" + hit.collider.isTrigger);
+            //Debug.Log(hit.transform.name + "::" + hit.collider.isTrigger);
             //code for damage receiving and adding money
             if (target != null)
             {
