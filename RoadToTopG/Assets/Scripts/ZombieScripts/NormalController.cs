@@ -8,7 +8,7 @@ using UnityEngine.AI;
 public class NormalController : MonoBehaviour
 {
     [SerializeField]
-    public int health;
+    public float health;
     Animator animator;
 
 
@@ -27,7 +27,7 @@ public class NormalController : MonoBehaviour
     {
         GetReference();
         Player = GameObject.FindGameObjectWithTag("Player").transform;
-        health = 100;
+        health = 20;
         animator = GetComponent<Animator>();
     }
 

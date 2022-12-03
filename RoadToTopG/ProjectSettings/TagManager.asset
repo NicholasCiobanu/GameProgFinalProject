@@ -6,6 +6,8 @@ TagManager:
   tags:
   - CinemachineTarget
   - Gun
+  - zombie
+  - innerSpawner
   layers:
   - Default
   - TransparentFX
