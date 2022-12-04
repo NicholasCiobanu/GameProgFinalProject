@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnerScript : MonoBehaviour
-{
+{ 
+    
     private RoundManager rm;
     //float roundDelay = 0f;
     //float spawnDelay = 0f;
@@ -30,7 +32,7 @@ public class SpawnerScript : MonoBehaviour
 
     IEnumerator waiter()
     {
-
+        
         yield return new WaitForSeconds(10);
         spawnZombies();
         roundDelay= false;
@@ -39,6 +41,8 @@ public class SpawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        
         zombies_left = GameObject.FindGameObjectsWithTag("zombie").Length;
         //Debug.Log(zombies_left);
         if (zombies_left == 0)
@@ -54,10 +58,13 @@ public class SpawnerScript : MonoBehaviour
         }
 
     }
+
+    
+
     void spawnZombies()
     {
 
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < 1; i++)
         {
             GameObject.Instantiate((GameObject)Resources.Load("Normal Variant", typeof(GameObject)), transform.position, Quaternion.identity);
             // Debug.Log("spawned a zombie");
