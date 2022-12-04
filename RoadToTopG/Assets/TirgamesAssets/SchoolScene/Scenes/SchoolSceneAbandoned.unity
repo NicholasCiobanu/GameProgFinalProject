@@ -8280,7 +8280,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 1.496, y: 0.069000006, z: 2.0770001}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: -1.496, y: -0.069000006, z: 2.0770001}
   m_TimeToStationary: 0.5
@@ -45652,9 +45652,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 424032985}
     m_Modifications:
+    - target: {fileID: 112194, guid: 738f6d1b98f30274dbaf82ca7613ff5e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 112194, guid: 738f6d1b98f30274dbaf82ca7613ff5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 146874, guid: 738f6d1b98f30274dbaf82ca7613ff5e, type: 3}
       propertyPath: m_Name
       value: FenceMetal02_L (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 146874, guid: 738f6d1b98f30274dbaf82ca7613ff5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 192108, guid: 738f6d1b98f30274dbaf82ca7613ff5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 464992, guid: 738f6d1b98f30274dbaf82ca7613ff5e, type: 3}
       propertyPath: m_RootOrder
@@ -56168,7 +56184,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 1.496, y: 0.069000006, z: 2.0770001}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: -1.496, y: -0.069000006, z: 2.0770001}
   m_TimeToStationary: 0.5
@@ -57210,9 +57226,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 424032985}
     m_Modifications:
+    - target: {fileID: 112194, guid: 738f6d1b98f30274dbaf82ca7613ff5e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 112194, guid: 738f6d1b98f30274dbaf82ca7613ff5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 146874, guid: 738f6d1b98f30274dbaf82ca7613ff5e, type: 3}
       propertyPath: m_Name
       value: FenceMetal02_L (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 146874, guid: 738f6d1b98f30274dbaf82ca7613ff5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 192108, guid: 738f6d1b98f30274dbaf82ca7613ff5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 464992, guid: 738f6d1b98f30274dbaf82ca7613ff5e, type: 3}
       propertyPath: m_RootOrder
@@ -78376,6 +78408,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 424032985}
     m_Modifications:
+    - target: {fileID: 112194, guid: 738f6d1b98f30274dbaf82ca7613ff5e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 112194, guid: 738f6d1b98f30274dbaf82ca7613ff5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 146874, guid: 738f6d1b98f30274dbaf82ca7613ff5e, type: 3}
       propertyPath: m_Name
       value: FenceMetal02_L (3)
