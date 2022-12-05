@@ -12,7 +12,6 @@ public class SpawnerScript : MonoBehaviour
     //float roundDelay = 0f;
     //float spawnDelay = 0f;
     int zombies_left = 0;
-    bool canSpawn = false;
     bool roundDelay = false;
     // Start is called before the first frame update
 
@@ -20,7 +19,7 @@ public class SpawnerScript : MonoBehaviour
     {
         
         rm = FindObjectOfType<RoundManager>();
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 5; i++)
         {
             GameObject.Instantiate((GameObject)Resources.Load("Normal Variant", typeof(GameObject)), transform.position, Quaternion.identity);
             // Debug.Log("spawned a zombie");
@@ -64,11 +63,12 @@ public class SpawnerScript : MonoBehaviour
     void spawnZombies()
     {
 
-        for (int i = 0; i < 1; i++)
+        for (int i = 0; i < 5; i++)
         {
-            GameObject.Instantiate((GameObject)Resources.Load("Normal Variant", typeof(GameObject)), transform.position, Quaternion.identity);
+            GameObject zombie = (GameObject)Resources.Load("Normal Variant", typeof(GameObject));
+            zombie.GetComponent<NormalController>().health += rm.getRound();
+            GameObject.Instantiate(zombie, transform.position, Quaternion.identity);
             // Debug.Log("spawned a zombie");
-
 
         }
         rm.nextRound();
