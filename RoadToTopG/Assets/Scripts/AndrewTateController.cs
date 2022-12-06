@@ -8,6 +8,10 @@ using UnityEngine.SceneManagement;
 
 public class AndrewTateController : MonoBehaviour
 {
+    [SerializeField] KarenController karen1;
+    [SerializeField] KarenController karen2;
+    [SerializeField] KarenController karen3;
+    [SerializeField] KarenController karen4;
     private AudioSource audioSource;
     [SerializeField]
     public AudioClip haramClip;
@@ -84,8 +88,13 @@ public class AndrewTateController : MonoBehaviour
     IEnumerator EndGame()
     {
         gameWonText.enabled = true;
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(0);
+
+        karen1.enabled = false;
+        karen2.enabled = false;
+        karen3.enabled = false;
+        karen4.enabled = false;
     }
     
 }

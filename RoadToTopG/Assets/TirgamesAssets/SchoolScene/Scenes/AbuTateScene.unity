@@ -10926,6 +10926,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &268280918 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3089796198655926715, guid: 4d40ee7d9191e3e4e82fd6a3d1c4eca5, type: 3}
+  m_PrefabInstance: {fileID: 1577613799}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &270793877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11512,85 +11523,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &297437645
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 297437646}
-  - component: {fileID: 297437648}
-  - component: {fileID: 297437647}
-  m_Layer: 5
-  m_Name: GameWon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &297437646
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 297437645}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2115718885}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
-  m_SizeDelta: {x: 336.5834, y: 45.5642}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &297437647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 297437645}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.25464988, g: 0.4433962, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 33
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 6
-    m_MaxSize: 64
-    m_Alignment: 1
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Good job. You are now a Top G
---- !u!222 &297437648
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 297437645}
-  m_CullTransparentMesh: 1
 --- !u!1001 &298175361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29606,6 +29538,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68388515073607741aa7d4a31f925877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  karen1: {fileID: 85356384}
+  karen2: {fileID: 1079591232}
+  karen3: {fileID: 238862336}
+  karen4: {fileID: 151573233}
   haramClip: {fileID: 8300000, guid: 93057d43819bf934f866caedec60e8db, type: 3}
   breatheAirClip: {fileID: 8300000, guid: 57a6c43f0239c364dbd2461141660750, type: 3}
   cantBanMeClip: {fileID: 8300000, guid: 8f870ed370ccba94b948376cbf256777, type: 3}
@@ -29613,6 +29549,7 @@ MonoBehaviour:
   speed: 0.2
   Player: {fileID: 1113401104}
   healthText: {fileID: 0}
+  gameWonText: {fileID: 268280918}
 --- !u!54 &736834610
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -62498,6 +62435,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1871729923053591160, guid: 4d40ee7d9191e3e4e82fd6a3d1c4eca5, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871729923053591160, guid: 4d40ee7d9191e3e4e82fd6a3d1c4eca5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 569.0297
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871729923053591160, guid: 4d40ee7d9191e3e4e82fd6a3d1c4eca5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 45.564
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871729923053591160, guid: 4d40ee7d9191e3e4e82fd6a3d1c4eca5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.8141
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871729923053591160, guid: 4d40ee7d9191e3e4e82fd6a3d1c4eca5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089796198655926715, guid: 4d40ee7d9191e3e4e82fd6a3d1c4eca5, type: 3}
+      propertyPath: m_Text
+      value: Congratulations. You are now a Top G
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089796198655926715, guid: 4d40ee7d9191e3e4e82fd6a3d1c4eca5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3920435247176599270, guid: 4d40ee7d9191e3e4e82fd6a3d1c4eca5, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -82849,11 +82814,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!224 &2115718885 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3920435248331812219, guid: 4d40ee7d9191e3e4e82fd6a3d1c4eca5, type: 3}
-  m_PrefabInstance: {fileID: 1577613799}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2116810588
 PrefabInstance:
   m_ObjectHideFlags: 0
