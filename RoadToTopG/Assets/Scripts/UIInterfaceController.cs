@@ -15,6 +15,10 @@ public class UIInterfaceController : MonoBehaviour
     private int playerHealth;
     [SerializeField] private Text healthText;
     [SerializeField] private Text gameOverText;
+    [SerializeField] private GameObject controlsMenu;
+    [SerializeField] private GameObject Interface;
+    [SerializeField] private GameObject Canvas;
+    private static bool menuUp;
     //public Animator zombieAnimator;
     float nextTimeToAttack = 0f;
     private GameObject player;
@@ -34,6 +38,17 @@ public class UIInterfaceController : MonoBehaviour
         if (playerHealth <= 0 && !playedBackWhereYouStartedClip)
         {
             StartCoroutine(RestartGame());
+        }
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if (menuUp){
+                menuUp = false;
+                controlsMenu.SetActive(false);
+            }
+            else{
+                menuUp = true;
+                controlsMenu.SetActive(true);
+            }
         }
     }
 
