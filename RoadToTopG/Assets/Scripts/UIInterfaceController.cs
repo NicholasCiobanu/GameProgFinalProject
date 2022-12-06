@@ -43,7 +43,7 @@ public class UIInterfaceController : MonoBehaviour
         playedBackWhereYouStartedClip = true;
         gameOverText.enabled = true;
         yield return new WaitForSeconds(4f);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public IEnumerator Damage()
