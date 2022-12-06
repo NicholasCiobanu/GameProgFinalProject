@@ -39785,7 +39785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiObject: {fileID: 977744671}
-  powerNotif: {fileID: 0}
+  powerNotif: {fileID: 235620348}
   cost: 700
   m4: {fileID: 1631925365}
   pistol: {fileID: 448239315}
@@ -46712,7 +46712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiObject: {fileID: 977744671}
-  powerNotif: {fileID: 0}
+  powerNotif: {fileID: 235620348}
   cost: 700
   m4: {fileID: 1631925365}
   pistol: {fileID: 448239315}
