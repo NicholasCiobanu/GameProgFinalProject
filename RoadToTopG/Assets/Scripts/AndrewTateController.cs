@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
+
 public class AndrewTateController : MonoBehaviour
 {
     private AudioSource audioSource;
@@ -28,12 +30,12 @@ public class AndrewTateController : MonoBehaviour
     [SerializeField]
     private Transform Player;
     
-
-    //  Interface
     [SerializeField]
     private GameObject healthText;
 
-    // Start is called before the first frame update
+    [SerializeField]
+    private Text gameWonText;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -52,6 +54,8 @@ public class AndrewTateController : MonoBehaviour
         if (health < 0)
         {
             animator.SetBool("isDead", true);
+            // show you win prompt
+            StartCoroutine(EndGame());
         }
         
         if (health < 1000 && !playedHaramClip)
@@ -75,9 +79,13 @@ public class AndrewTateController : MonoBehaviour
             transform.LookAt(Player.gameObject.transform);
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
-        
+    }
 
-
+    IEnumerator EndGame()
+    {
+        gameWonText.enabled = true;
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene(0);
     }
     
 }
