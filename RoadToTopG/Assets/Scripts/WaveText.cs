@@ -1,9 +1,4 @@
 
-
-
-
-
-using System.Net.Mime;
 using System.Collections.ObjectModel;
 using System.Collections;
 using System.Collections.Generic;
@@ -49,7 +44,7 @@ public class WaveText : MonoBehaviour
 
         
 
-        if(col.a<2 && fadeIn)
+        if(col.a<1 && fadeIn)
         {
             col.a+=Time.deltaTime;
             text.color=col;
@@ -59,13 +54,14 @@ public class WaveText : MonoBehaviour
             StartCoroutine(waveTextTime(5));
         }
 
-        if(col.a>0 && fadeOut)
+        if(col.a>0 && fadeOut && doneWaiting)
         {
             int debug = (int)col.a;
             Debug.Log("fadeout: " + debug);
             col.a-=Time.deltaTime;
             text.color=col;
         } else{
+            doneWaiting = false;
             fadeOut = false;
         }
 
