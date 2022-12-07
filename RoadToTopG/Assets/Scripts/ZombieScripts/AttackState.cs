@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class AttackState : StateMachineBehaviour
 {
+    
+    AudioSource audioSource;
+    
+
     private GameObject player;
     private GameObject zombie;
     private float distance;
@@ -14,7 +18,9 @@ public class AttackState : StateMachineBehaviour
     {
         player = GameObject.Find("PlayerCapsule");
         zombie = animator.GameObject();
-
+        audioSource = zombie.GetComponent<AudioSource>();
+        //audioSource.mute = false;
+        audioSource.Play(0);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
