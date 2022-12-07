@@ -33,26 +33,21 @@ public class TriggerDoorOpen : MonoBehaviour
         {
             uiObject.SetActive(true);
             StartCoroutine("WaitForSec");
-            if (Input.GetKey("f") && mm.getMoney() >= cost)
+            if (gameObject.name.Equals("TiggerOpenAndrewTateBoss"))
             {
-                Destroy(uiObject);
-                mm.RemoveMoney(cost);
-                GameObject[] innerSpawners = GameObject.FindGameObjectsWithTag("innerSpawner");
-                Debug.Log(innerSpawners.Length);
-                foreach (GameObject spawner in innerSpawners)
+                if (Input.GetKey("f") && mm.getMoney() >= cost && ((rm.getRound()-1)/3 + 1) >= 7)
                 {
-                    Debug.Log(spawner.name);
-                    spawner.SetActive(true);
-                }
-                if (openTrigger)
-                {
-                    myDoor.Play(firstDoorOpen, 0, 0.0f);
-                    secondDoor.Play(secondDoorOpen, 0, 0.0f);
-                    doorOpenAudioSource.Play();
-                    gameObject.SetActive(false);
-                    
+                    OpenDoor();
                 }
             }
+            else
+            {
+                if (Input.GetKey("f") && mm.getMoney() >= cost)
+                {
+                    OpenDoor();
+                }
+            }
+
         }
     }
 
@@ -65,5 +60,26 @@ public class TriggerDoorOpen : MonoBehaviour
     IEnumerator WaitForSec()
     {
         yield return new WaitForSeconds(20);
+    }
+
+    private void OpenDoor()
+    {
+        Destroy(uiObject);
+        mm.RemoveMoney(cost);
+        GameObject[] innerSpawners = GameObject.FindGameObjectsWithTag("innerSpawner");
+        Debug.Log(innerSpawners.Length);
+        foreach (GameObject spawner in innerSpawners)
+        {
+            Debug.Log(spawner.name);
+            spawner.SetActive(true);
+        }
+        if (openTrigger)
+        {
+            myDoor.Play(firstDoorOpen, 0, 0.0f);
+            secondDoor.Play(secondDoorOpen, 0, 0.0f);
+            doorOpenAudioSource.Play();
+            gameObject.SetActive(false);
+
+        }
     }
 }

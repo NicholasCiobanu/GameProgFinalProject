@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class AttackState : StateMachineBehaviour
 {
+    
+    AudioSource audioSource;
+    
+
     private GameObject player;
     private GameObject zombie;
     private float distance;
@@ -14,7 +18,9 @@ public class AttackState : StateMachineBehaviour
     {
         player = GameObject.Find("PlayerCapsule");
         zombie = animator.GameObject();
-
+        audioSource = zombie.GetComponent<AudioSource>();
+        //audioSource.mute = false;
+        audioSource.Play(0);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -22,15 +28,15 @@ public class AttackState : StateMachineBehaviour
     {
         distance = Vector3.Distance(player.transform.position, zombie.transform.position);
 
-        if (distance > 2 )
+        if (zombie.name.Contains("Normal Variant"))
         {
-            animator.SetBool("isInRange", false);
+            CheckIfInRange(distance, 1, animator);
         }
-        else if (Time.time >= nextTimeToAttack)
+        else
         {
-            nextTimeToAttack = Time.time + 0.5f;
-            player.GetComponent<HealthController>().health -= 5;
+            CheckIfInRange(distance, 2, animator);
         }
+        
         /*
          *  if (zombieAnimator.GetBool("isInRange") && Time.time >= nextTimeToAttack)
         {   
@@ -47,6 +53,18 @@ public class AttackState : StateMachineBehaviour
         }*/
     }
 
+    private void CheckIfInRange(float distance, int range, Animator animator)
+    {
+        if (distance > 2 )
+        {
+            animator.SetBool("isInRange", false);
+        }
+        else if (Time.time >= nextTimeToAttack)
+        {
+            nextTimeToAttack = Time.time + 0.5f;
+            player.GetComponent<HealthController>().health -= 5;
+        }
+    }
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
