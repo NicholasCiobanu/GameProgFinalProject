@@ -54,7 +54,7 @@ public class NormalController : MonoBehaviour
                 transform.rotation = rotation;
             }
         }
-        if (health < 0)
+        if (health == 0)
         {
             animator.SetBool("isDead", true);
         }
