@@ -35,48 +35,17 @@ public class TriggerDoorOpen : MonoBehaviour
             StartCoroutine("WaitForSec");
             if (gameObject.name.Equals("TiggerOpenAndrewTateBoss"))
             {
-                if (Input.GetKey("f") && mm.getMoney() >= cost && rm.getRound() > 7)
+                Debug.Log((rm.getRound()-1)/3 + 1);
+                if (Input.GetKey("f") && mm.getMoney() >= cost && ((rm.getRound()-1)/3 + 1) >= 7)
                 {
-                    Destroy(uiObject);
-                    mm.RemoveMoney(cost);
-                    GameObject[] innerSpawners = GameObject.FindGameObjectsWithTag("innerSpawner");
-                    Debug.Log(innerSpawners.Length);
-                    foreach (GameObject spawner in innerSpawners)
-                    {
-                        Debug.Log(spawner.name);
-                        spawner.SetActive(true);
-                    }
-                    if (openTrigger)
-                    {
-                        myDoor.Play(firstDoorOpen, 0, 0.0f);
-                        secondDoor.Play(secondDoorOpen, 0, 0.0f);
-                        doorOpenAudioSource.Play();
-                        gameObject.SetActive(false);
-
-                    }
+                    OpenDoor();
                 }
             }
             else
             {
                 if (Input.GetKey("f") && mm.getMoney() >= cost)
                 {
-                    Destroy(uiObject);
-                    mm.RemoveMoney(cost);
-                    GameObject[] innerSpawners = GameObject.FindGameObjectsWithTag("innerSpawner");
-                    Debug.Log(innerSpawners.Length);
-                    foreach (GameObject spawner in innerSpawners)
-                    {
-                        Debug.Log(spawner.name);
-                        spawner.SetActive(true);
-                    }
-                    if (openTrigger)
-                    {
-                        myDoor.Play(firstDoorOpen, 0, 0.0f);
-                        secondDoor.Play(secondDoorOpen, 0, 0.0f);
-                        doorOpenAudioSource.Play();
-                        gameObject.SetActive(false);
-
-                    }
+                    OpenDoor();
                 }
             }
 
@@ -92,5 +61,26 @@ public class TriggerDoorOpen : MonoBehaviour
     IEnumerator WaitForSec()
     {
         yield return new WaitForSeconds(20);
+    }
+
+    private void OpenDoor()
+    {
+        Destroy(uiObject);
+        mm.RemoveMoney(cost);
+        GameObject[] innerSpawners = GameObject.FindGameObjectsWithTag("innerSpawner");
+        Debug.Log(innerSpawners.Length);
+        foreach (GameObject spawner in innerSpawners)
+        {
+            Debug.Log(spawner.name);
+            spawner.SetActive(true);
+        }
+        if (openTrigger)
+        {
+            myDoor.Play(firstDoorOpen, 0, 0.0f);
+            secondDoor.Play(secondDoorOpen, 0, 0.0f);
+            doorOpenAudioSource.Play();
+            gameObject.SetActive(false);
+
+        }
     }
 }
