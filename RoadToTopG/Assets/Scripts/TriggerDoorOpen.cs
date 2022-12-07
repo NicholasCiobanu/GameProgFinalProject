@@ -35,7 +35,6 @@ public class TriggerDoorOpen : MonoBehaviour
             StartCoroutine("WaitForSec");
             if (gameObject.name.Equals("TiggerOpenAndrewTateBoss"))
             {
-                Debug.Log((rm.getRound()-1)/3 + 1);
                 if (Input.GetKey("f") && mm.getMoney() >= cost && ((rm.getRound()-1)/3 + 1) >= 7)
                 {
                     OpenDoor();

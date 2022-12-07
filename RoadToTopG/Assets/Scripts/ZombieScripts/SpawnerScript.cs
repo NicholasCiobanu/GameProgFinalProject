@@ -19,7 +19,7 @@ public class SpawnerScript : MonoBehaviour
     {
         
         rm = FindObjectOfType<RoundManager>();
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 10; i++)
         {
             GameObject.Instantiate((GameObject)Resources.Load("Normal Variant", typeof(GameObject)), transform.position, Quaternion.identity);
             // Debug.Log("spawned a zombie");
@@ -32,7 +32,7 @@ public class SpawnerScript : MonoBehaviour
     IEnumerator waiter()
     {
         
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(20);
         spawnZombies();
         roundDelay= false;
     }
@@ -63,10 +63,10 @@ public class SpawnerScript : MonoBehaviour
     void spawnZombies()
     {
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 7; i++)
         {
             GameObject zombie = (GameObject)Resources.Load("Normal Variant", typeof(GameObject));
-            zombie.GetComponent<NormalController>().health += rm.getRound();
+            zombie.GetComponent<NormalController>().health += rm.getRound() * 5;
             GameObject.Instantiate(zombie, transform.position, Quaternion.identity);
             // Debug.Log("spawned a zombie");
 
