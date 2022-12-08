@@ -23,6 +23,7 @@ public class CutScenes : MonoBehaviour
     [SerializeField] private GameObject m4Silhouette;
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         StartCoroutine(TheSequence());
     }
 
