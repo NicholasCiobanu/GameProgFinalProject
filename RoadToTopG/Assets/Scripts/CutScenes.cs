@@ -21,10 +21,40 @@ public class CutScenes : MonoBehaviour
     [SerializeField] private GameObject remainingMag;
     [SerializeField] private GameObject diagonalAmmo;
     [SerializeField] private GameObject m4Silhouette;
+    [SerializeField] private GameObject skipCutScene;
+    Coroutine coroutine;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        StartCoroutine(TheSequence());
+        coroutine = StartCoroutine(TheSequence());
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StopCoroutine(coroutine);
+            turnCameroOff(Cam1);
+            turnCameroOff(Cam2);
+            skipCutScene.SetActive(false);
+            Cam3.SetActive(true);
+            kanye.enabled = (true);
+            kanyeController.enabled = (true);
+            crosshair.SetActive(true);
+            crosshair1.SetActive(true);
+            healthText.SetActive(true);
+            healtPic.SetActive(true);
+            money.SetActive(true);
+            magazine.SetActive(true);
+            remainingMag.SetActive(true);
+            diagonalAmmo.SetActive(true);
+            m4Silhouette.SetActive(true);
+        }
+    }
+
+    void turnCameroOff(GameObject Cam)
+    {
+        Cam.SetActive(false);
     }
 
     IEnumerator TheSequence()
@@ -47,5 +77,6 @@ public class CutScenes : MonoBehaviour
         remainingMag.SetActive(true);
         diagonalAmmo.SetActive(true);
         m4Silhouette.SetActive(true);
+        skipCutScene.SetActive(false);
     }
 }
